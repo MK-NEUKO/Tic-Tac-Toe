@@ -24,5 +24,12 @@ namespace TicTacToe
         {
             InitializeComponent();
         }
+
+        private void feld_0_0_Click(object sender, RoutedEventArgs e)
+        {
+            feld_0_0.Background = Brushes.LawnGreen;
+            feld_0_0.Foreground = Brushes.DarkGray;
+
+        }
     }
 }
