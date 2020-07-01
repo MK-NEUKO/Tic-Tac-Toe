@@ -57,10 +57,11 @@ namespace TicTacToe
             {
                 feld.Content = "O";
             }
-            //else if ((spielerEins || spielerZwei) && feld.Content != null)
-            //{
-
-            //}
+            else if (feld.Content != null)
+            {
+                MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
+                zaehler--;
+            }
         }
     }
 }
