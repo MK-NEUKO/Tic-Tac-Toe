@@ -20,28 +20,47 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+        private int zaehler = 1;
+        private bool spielerEins = true;
+        private bool spielerZwei = false;
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Feld_0_0_Click(object sender, RoutedEventArgs e)
+        private void SpielerPruefen()
         {
-
-            switch (feld_0_0.Content)
+            if (zaehler % 2 != 0)
             {
-                case null:
-                    feld_0_0.Content = "X";
-                    break;
-                case "X":
-                    feld_0_0.Content = "O";
-                    break;
-                case "O":
-                    feld_0_0.Content = "X";
-                    break;
-                default:
-                    break;
+                spielerEins = true;
+                spielerZwei = false;
             }
+            else
+            {
+                spielerZwei = true;
+                spielerEins = false;
+            }
+            zaehler++;
+        }
+
+
+        private void Feld_Click(object sender, RoutedEventArgs e)
+        {
+            Button feld = (Button)sender;
+            SpielerPruefen();
+
+            if (spielerEins && feld.Content == null)
+            {
+                feld.Content = "X";
+            }
+            else if (spielerZwei && feld.Content == null)
+            {
+                feld.Content = "O";
+            }
+            //else if ((spielerEins || spielerZwei) && feld.Content != null)
+            //{
+
+            //}
         }
     }
 }
