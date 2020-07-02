@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -26,6 +27,20 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
+            StartenSpielfeldLeeren();
+        }
+
+        public void StartenSpielfeldLeeren()
+        {
+            feld_0_0.Content = null;
+            feld_0_1.Content = null;
+            feld_0_2.Content = null;
+            feld_1_0.Content = null;
+            feld_1_1.Content = null;
+            feld_1_2.Content = null;
+            feld_2_0.Content = null;
+            feld_2_1.Content = null;
+            feld_2_2.Content = null;
         }
 
         private void SpielerPruefen()
@@ -61,6 +76,10 @@ namespace TicTacToe
             {
                 MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
                 zaehler--;
+            }
+            else if (true)
+            {
+
             }
         }
     }
