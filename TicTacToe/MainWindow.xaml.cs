@@ -27,10 +27,11 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
-            StartenSpielfeldLeeren();
+            //feld_0_0.Content = "X";
+            SpielfeldLeeren();
         }
 
-        public void StartenSpielfeldLeeren()
+        public void SpielfeldLeeren()
         {
             feld_0_0.Content = null;
             feld_0_1.Content = null;
@@ -58,6 +59,21 @@ namespace TicTacToe
             zaehler++;
         }
 
+        private bool IstSpielfeldVoll()
+        {
+            foreach (UIElement stein in spielfeld.Children)
+            {
+                if (stein is Button feld)
+                {
+                    if (feld.Content == null)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
 
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
@@ -76,11 +92,13 @@ namespace TicTacToe
             {
                 MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
                 zaehler--;
+                if (IstSpielfeldVoll())
+                {
+                    SpielfeldLeeren();
+                }
             }
-            else if (true)
-            {
-
-            }
+            
         }
+
     }
 }
