@@ -29,18 +29,34 @@ namespace TicTacToe
             SpielfeldLeeren();
         }
 
+        #region SpielfeldLeeren
+        // Was ist besser, SpielfeldLeeren() als Einzelanweisungen,
+        // oder eine Schleife
+
+        //public void SpielfeldLeeren()
+        //{
+        //    feld_0_0.Content = null;
+        //    feld_0_1.Content = null;
+        //    feld_0_2.Content = null;
+        //    feld_1_0.Content = null;
+        //    feld_1_1.Content = null;
+        //    feld_1_2.Content = null;
+        //    feld_2_0.Content = null;
+        //    feld_2_1.Content = null;
+        //    feld_2_2.Content = null;
+        //}
+
         public void SpielfeldLeeren()
         {
-            feld_0_0.Content = null;
-            feld_0_1.Content = null;
-            feld_0_2.Content = null;
-            feld_1_0.Content = null;
-            feld_1_1.Content = null;
-            feld_1_2.Content = null;
-            feld_2_0.Content = null;
-            feld_2_1.Content = null;
-            feld_2_2.Content = null;
+            foreach (UIElement item in spielfeld.Children)
+            {
+                if (item is Button feld)
+                {
+                    feld.Content = null;
+                }
+            }
         }
+        #endregion
 
         private bool IstSpielfeldVoll()
         {
