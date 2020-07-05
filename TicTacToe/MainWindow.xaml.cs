@@ -75,6 +75,28 @@ namespace TicTacToe
             return true;
         }
 
+        private void GewinnerErmitteln()
+        {
+            // Spielfeld auslesen und in einem String abspeichern
+            string spielfeldInhalt = null;
+            foreach (UIElement item in spielfeld.Children)
+            {
+                if (item is Button feld)
+                {
+                    if (feld.Content == null)
+                    {
+                        spielfeldInhalt += " ";
+                    }
+                    else
+                    {
+                        // Dieser Cast muss eventuell noch abgesichert werden
+                        spielfeldInhalt += (string)feld.Content;
+                    }                       
+                }
+            }
+            //MessageBox.Show("ausgelesen wurde", spielfeldInhalt);
+            test.Text = spielfeldInhalt;
+        }
 
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
@@ -85,6 +107,7 @@ namespace TicTacToe
                 feld.Content = "X";
                 istSpielerEins = false;
                 istSpielerZwei = true;
+                GewinnerErmitteln();
             }
             else if (istSpielerZwei && feld.Content == null)
             {
@@ -93,6 +116,7 @@ namespace TicTacToe
                 feld.Foreground = Brushes.DimGray;
                 istSpielerZwei = false;
                 istSpielerEins = true;
+                GewinnerErmitteln();
             }
             else if (feld.Content != null)
             {

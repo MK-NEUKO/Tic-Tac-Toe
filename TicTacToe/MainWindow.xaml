@@ -41,5 +41,6 @@
         <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_2_2" Grid.Column="2" Grid.Row="2" Click="Feld_Click"/>
+        <TextBlock Name="test" Grid.Column="1" Grid.Row="3" TextWrapping="Wrap"/>
     </Grid>
 </Window>
