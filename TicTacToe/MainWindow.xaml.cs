@@ -53,6 +53,8 @@ namespace TicTacToe
                 if (item is Button feld)
                 {
                     feld.Content = null;
+                    feld.Background = Brushes.DimGray;
+                    feld.Foreground = Brushes.LawnGreen;
                 }
             }
         }
@@ -87,6 +89,8 @@ namespace TicTacToe
             else if (istSpielerZwei && feld.Content == null)
             {
                 feld.Content = "O";
+                feld.Background = Brushes.LawnGreen;
+                feld.Foreground = Brushes.DimGray;
                 istSpielerZwei = false;
                 istSpielerEins = true;
             }
