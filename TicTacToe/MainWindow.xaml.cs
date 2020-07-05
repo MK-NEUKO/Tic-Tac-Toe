@@ -89,13 +89,79 @@ namespace TicTacToe
                     }
                     else
                     {
-                        // Dieser Cast muss eventuell noch abgesichert werden
-                        spielfeldInhalt += (string)feld.Content;
+                        spielfeldInhalt += feld.Content as string;
                     }                       
                 }
             }
             //MessageBox.Show("ausgelesen wurde", spielfeldInhalt);
             test.Text = spielfeldInhalt;
+
+            // Es gibt 8 verschiedene Gewinnkonstellationen, der String wird
+            // zur Überprüfung für alle 8 Konstellationen zurechtgeschnitten
+
+            for (int fall = 1; fall < 9; fall++)
+            {
+                string gewonnen = null;
+                switch (fall)
+                {
+                    case 1:
+                        gewonnen = spielfeldInhalt.Substring(0, 3);
+                        test.Text = spielfeldInhalt;
+                        break;
+                    case 2:
+                        gewonnen = spielfeldInhalt.Substring(3, 3);
+                        break;
+                    case 3:
+                        gewonnen = spielfeldInhalt.Substring(6, 3);
+                        break;
+                    case 4:
+                        gewonnen = spielfeldInhalt.Substring(0, 1);
+                        gewonnen += spielfeldInhalt.Substring(3, 1);
+                        gewonnen += spielfeldInhalt.Substring(6, 1);
+                        break;
+                    case 5:
+                        gewonnen = spielfeldInhalt.Substring(1, 1);
+                        gewonnen += spielfeldInhalt.Substring(4, 1);
+                        gewonnen += spielfeldInhalt.Substring(7, 1);
+                        break;
+                    case 6:
+                        gewonnen = spielfeldInhalt.Substring(2, 1);
+                        gewonnen += spielfeldInhalt.Substring(5, 1);
+                        gewonnen += spielfeldInhalt.Substring(8, 1);
+                        break;
+                    case 7:
+                        gewonnen = spielfeldInhalt.Substring(0, 1);
+                        gewonnen += spielfeldInhalt.Substring(4, 1);
+                        gewonnen += spielfeldInhalt.Substring(8, 1);
+                        break;
+                    case 8:
+                        gewonnen = spielfeldInhalt.Substring(2, 1);
+                        gewonnen += spielfeldInhalt.Substring(4, 1);
+                        gewonnen += spielfeldInhalt.Substring(6, 1);
+                        break;
+                    default:
+                        break;
+                }
+
+                // Der zurechtgeschnittene String wird geprüft
+                if (gewonnen == "XXX")
+                {
+                    MessageBox.Show("Spieler X hat gewonnen");
+                    SpielfeldLeeren();
+                    istSpielerEins = true;
+                    istSpielerZwei = false;
+                }
+                else if (gewonnen == "OOO")
+                {
+                    MessageBox.Show("Spieler O hat gewonnen");
+                    SpielfeldLeeren();
+                    istSpielerEins = false;
+                    istSpielerZwei = true;
+                }
+                
+            }
+
+
         }
 
         private void Feld_Click(object sender, RoutedEventArgs e)
