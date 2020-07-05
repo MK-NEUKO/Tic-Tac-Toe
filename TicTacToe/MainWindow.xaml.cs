@@ -21,13 +21,11 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        private int zaehler = 1;
-        private bool spielerEins = true;
-        private bool spielerZwei = false;
+        private bool istSpielerEins = true;
+        private bool istSpielerZwei = false;
         public MainWindow()
         {
             InitializeComponent();
-            //feld_0_0.Content = "X";
             SpielfeldLeeren();
         }
 
@@ -42,21 +40,6 @@ namespace TicTacToe
             feld_2_0.Content = null;
             feld_2_1.Content = null;
             feld_2_2.Content = null;
-        }
-
-        private void SpielerPruefen()
-        {
-            if (zaehler % 2 != 0)
-            {
-                spielerEins = true;
-                spielerZwei = false;
-            }
-            else
-            {
-                spielerZwei = true;
-                spielerEins = false;
-            }
-            zaehler++;
         }
 
         private bool IstSpielfeldVoll()
@@ -78,23 +61,28 @@ namespace TicTacToe
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
             Button feld = (Button)sender;
-            SpielerPruefen();
 
-            if (spielerEins && feld.Content == null)
+            if (istSpielerEins && feld.Content == null)
             {
                 feld.Content = "X";
+                istSpielerEins = false;
+                istSpielerZwei = true;
             }
-            else if (spielerZwei && feld.Content == null)
+            else if (istSpielerZwei && feld.Content == null)
             {
                 feld.Content = "O";
+                istSpielerZwei = false;
+                istSpielerEins = true;
             }
             else if (feld.Content != null)
             {
                 MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
-                zaehler--;
+   
                 if (IstSpielfeldVoll())
                 {
                     SpielfeldLeeren();
+                    istSpielerEins = true;
+                    istSpielerZwei = false;
                 }
             }
             
