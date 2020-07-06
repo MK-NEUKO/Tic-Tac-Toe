@@ -93,51 +93,59 @@ namespace TicTacToe
                     }                       
                 }
             }
-            //MessageBox.Show("ausgelesen wurde", spielfeldInhalt);
-            test.Text = spielfeldInhalt;
 
             // Es gibt 8 verschiedene Gewinnkonstellationen, der String wird
-            // zur Überprüfung für alle 8 Konstellationen zurechtgeschnitten
-
+            // zur Überprüfung für alle 8 Konstellationen zurechtgeschnitten.
+            // Zusätzlich wird das Array feldEinfaerben entsprechend initialisiert,
+            // um in der Funtion GewinnfelderFaerben() die entsprechenden Felder gelb zu färben.
+            
             for (int fall = 1; fall < 9; fall++)
             {
                 string gewonnen = null;
+                int[] feldEinfaerben = new int[9];
                 switch (fall)
                 {
                     case 1:
                         gewonnen = spielfeldInhalt.Substring(0, 3);
-                        test.Text = spielfeldInhalt;
+                        feldEinfaerben[0] = 1;  feldEinfaerben[1] = 1;  feldEinfaerben[2] = 1;
                         break;
                     case 2:
                         gewonnen = spielfeldInhalt.Substring(3, 3);
+                        feldEinfaerben[3] = 1;  feldEinfaerben[4] = 1;  feldEinfaerben[5] = 1;
                         break;
                     case 3:
                         gewonnen = spielfeldInhalt.Substring(6, 3);
+                        feldEinfaerben[6] = 1;  feldEinfaerben[7] = 1;  feldEinfaerben[8] = 1;
                         break;
                     case 4:
                         gewonnen = spielfeldInhalt.Substring(0, 1);
                         gewonnen += spielfeldInhalt.Substring(3, 1);
                         gewonnen += spielfeldInhalt.Substring(6, 1);
+                        feldEinfaerben[0] = 1;  feldEinfaerben[3] = 1;  feldEinfaerben[6] = 1;
                         break;
                     case 5:
                         gewonnen = spielfeldInhalt.Substring(1, 1);
                         gewonnen += spielfeldInhalt.Substring(4, 1);
                         gewonnen += spielfeldInhalt.Substring(7, 1);
+                        feldEinfaerben[1] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[7] = 1;
                         break;
                     case 6:
                         gewonnen = spielfeldInhalt.Substring(2, 1);
                         gewonnen += spielfeldInhalt.Substring(5, 1);
                         gewonnen += spielfeldInhalt.Substring(8, 1);
+                        feldEinfaerben[2] = 1;  feldEinfaerben[5] = 1;   feldEinfaerben[8] = 1;
                         break;
                     case 7:
                         gewonnen = spielfeldInhalt.Substring(0, 1);
                         gewonnen += spielfeldInhalt.Substring(4, 1);
                         gewonnen += spielfeldInhalt.Substring(8, 1);
+                        feldEinfaerben[0] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[8] = 1;
                         break;
                     case 8:
                         gewonnen = spielfeldInhalt.Substring(2, 1);
                         gewonnen += spielfeldInhalt.Substring(4, 1);
                         gewonnen += spielfeldInhalt.Substring(6, 1);
+                        feldEinfaerben[2] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[6] = 1;
                         break;
                     default:
                         break;
@@ -146,6 +154,7 @@ namespace TicTacToe
                 // Der zurechtgeschnittene String wird geprüft
                 if (gewonnen == "XXX")
                 {
+                    GewinnfelderFaerben(feldEinfaerben);
                     MessageBox.Show("Spieler X hat gewonnen");
                     SpielfeldLeeren();
                     istSpielerEins = true;
@@ -153,20 +162,34 @@ namespace TicTacToe
                 }
                 else if (gewonnen == "OOO")
                 {
+                    GewinnfelderFaerben(feldEinfaerben);
                     MessageBox.Show("Spieler O hat gewonnen");
                     SpielfeldLeeren();
                     istSpielerEins = false;
                     istSpielerZwei = true;
                 }
-                
+
             }
 
+        }
 
+        private void GewinnfelderFaerben(int[] array)
+        {
+            int index = 0;
+            foreach (UIElement item in spielfeld.Children)
+            {
+                Button feld = item as Button;
+                if (array[index] == 1)
+                {
+                    feld.Background = Brushes.Yellow;
+                }
+                index++;
+            }
         }
 
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
-            Button feld = (Button)sender;
+            Button feld = sender as Button;
 
             if (istSpielerEins && feld.Content == null)
             {
