@@ -60,6 +60,8 @@ namespace TicTacToe
         }
         #endregion
 
+
+
         private bool IstSpielfeldVoll()
         {
             foreach (UIElement stein in spielfeld.Children)
@@ -157,16 +159,12 @@ namespace TicTacToe
                     GewinnfelderFaerben(feldEinfaerben);
                     MessageBox.Show("Spieler X hat gewonnen");
                     SpielfeldLeeren();
-                    istSpielerEins = true;
-                    istSpielerZwei = false;
                 }
                 else if (gewonnen == "OOO")
                 {
                     GewinnfelderFaerben(feldEinfaerben);
                     MessageBox.Show("Spieler O hat gewonnen");
                     SpielfeldLeeren();
-                    istSpielerEins = false;
-                    istSpielerZwei = true;
                 }
 
             }
@@ -194,18 +192,18 @@ namespace TicTacToe
             if (istSpielerEins && feld.Content == null)
             {
                 feld.Content = "X";
+                GewinnerErmitteln();
                 istSpielerEins = false;
                 istSpielerZwei = true;
-                GewinnerErmitteln();
             }
             else if (istSpielerZwei && feld.Content == null)
             {
                 feld.Content = "O";
+                GewinnerErmitteln();
                 feld.Background = Brushes.LawnGreen;
                 feld.Foreground = Brushes.DimGray;
                 istSpielerZwei = false;
                 istSpielerEins = true;
-                GewinnerErmitteln();
             }
             else if (feld.Content != null)
             {
