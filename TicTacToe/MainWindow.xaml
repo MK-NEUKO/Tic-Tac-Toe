@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="NEUKO    Tic Tac Toe" Height="500" Width="500">
+        Title="MK-NEUKO    Tic Tac Toe" Height="500" Width="500">
     
     <Window.Resources>
         <Style TargetType="Button">
@@ -33,10 +33,10 @@
         <Button Name="feld_1_0" Grid.Column="1" Grid.Row="0" Click="Feld_Click"/>
         <Button Name="feld_2_0" Grid.Column="2" Grid.Row="0" Click="Feld_Click"/>
 
-        <Label Name="lableEins" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
         <Button Name="feld_0_1" Grid.Column="0" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_1_1" Grid.Column="1" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_2_1" Grid.Column="2" Grid.Row="1" Click="Feld_Click"/>
+        <Label x:Name="labelHinweise" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Hidden" Content="TEST+++TEST" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>

@@ -55,6 +55,7 @@ namespace TicTacToe
                     feld.Content = null;
                     feld.Background = Brushes.DimGray;
                     feld.Foreground = Brushes.LawnGreen;
+                    labelHinweise.Visibility = Visibility.Hidden;
                 }
             }
         }
@@ -108,46 +109,68 @@ namespace TicTacToe
                 switch (fall)
                 {
                     case 1:
-                        gewonnen = spielfeldInhalt.Substring(0, 3);
-                        feldEinfaerben[0] = 1;  feldEinfaerben[1] = 1;  feldEinfaerben[2] = 1;
+                        gewonnen += spielfeldInhalt[0];
+                        gewonnen += spielfeldInhalt[1];
+                        gewonnen += spielfeldInhalt[2];
+                        feldEinfaerben[0] = 1;
+                        feldEinfaerben[1] = 1;
+                        feldEinfaerben[2] = 1;
                         break;
                     case 2:
-                        gewonnen = spielfeldInhalt.Substring(3, 3);
-                        feldEinfaerben[3] = 1;  feldEinfaerben[4] = 1;  feldEinfaerben[5] = 1;
+                        gewonnen += spielfeldInhalt[3];
+                        gewonnen += spielfeldInhalt[4];
+                        gewonnen += spielfeldInhalt[5];
+                        feldEinfaerben[3] = 1;
+                        feldEinfaerben[4] = 1;
+                        feldEinfaerben[5] = 1;
                         break;
                     case 3:
-                        gewonnen = spielfeldInhalt.Substring(6, 3);
-                        feldEinfaerben[6] = 1;  feldEinfaerben[7] = 1;  feldEinfaerben[8] = 1;
+                        gewonnen += spielfeldInhalt[6];
+                        gewonnen += spielfeldInhalt[7];
+                        gewonnen += spielfeldInhalt[8];
+                        feldEinfaerben[6] = 1;
+                        feldEinfaerben[7] = 1;
+                        feldEinfaerben[8] = 1;
                         break;
                     case 4:
-                        gewonnen = spielfeldInhalt.Substring(0, 1);
-                        gewonnen += spielfeldInhalt.Substring(3, 1);
-                        gewonnen += spielfeldInhalt.Substring(6, 1);
-                        feldEinfaerben[0] = 1;  feldEinfaerben[3] = 1;  feldEinfaerben[6] = 1;
+                        gewonnen += spielfeldInhalt[0];
+                        gewonnen += spielfeldInhalt[3];
+                        gewonnen += spielfeldInhalt[6];
+                        feldEinfaerben[0] = 1;
+                        feldEinfaerben[3] = 1;
+                        feldEinfaerben[6] = 1;
                         break;
                     case 5:
-                        gewonnen = spielfeldInhalt.Substring(1, 1);
-                        gewonnen += spielfeldInhalt.Substring(4, 1);
-                        gewonnen += spielfeldInhalt.Substring(7, 1);
-                        feldEinfaerben[1] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[7] = 1;
+                        gewonnen += spielfeldInhalt[1];
+                        gewonnen += spielfeldInhalt[4];
+                        gewonnen += spielfeldInhalt[7];
+                        feldEinfaerben[1] = 1;
+                        feldEinfaerben[4] = 1;
+                        feldEinfaerben[7] = 1;
                         break;
                     case 6:
-                        gewonnen = spielfeldInhalt.Substring(2, 1);
-                        gewonnen += spielfeldInhalt.Substring(5, 1);
-                        gewonnen += spielfeldInhalt.Substring(8, 1);
-                        feldEinfaerben[2] = 1;  feldEinfaerben[5] = 1;   feldEinfaerben[8] = 1;
+                        gewonnen += spielfeldInhalt[2];
+                        gewonnen += spielfeldInhalt[5];
+                        gewonnen += spielfeldInhalt[8];
+                        feldEinfaerben[2] = 1;
+                        feldEinfaerben[5] = 1;
+                        feldEinfaerben[8] = 1;
                         break;
                     case 7:
-                        gewonnen = spielfeldInhalt.Substring(0, 1);
-                        gewonnen += spielfeldInhalt.Substring(4, 1);
-                        gewonnen += spielfeldInhalt.Substring(8, 1);
-                        feldEinfaerben[0] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[8] = 1;
+                        gewonnen += spielfeldInhalt[0];
+                        gewonnen += spielfeldInhalt[4];
+                        gewonnen += spielfeldInhalt[8];
+                        feldEinfaerben[0] = 1;
+                        feldEinfaerben[4] = 1;
+                        feldEinfaerben[8] = 1;
                         break;
                     case 8:
-                        gewonnen = spielfeldInhalt.Substring(2, 1);
-                        gewonnen += spielfeldInhalt.Substring(4, 1);
-                        gewonnen += spielfeldInhalt.Substring(6, 1);
-                        feldEinfaerben[2] = 1;  feldEinfaerben[4] = 1;   feldEinfaerben[6] = 1;
+                        gewonnen += spielfeldInhalt[2];
+                        gewonnen += spielfeldInhalt[4];
+                        gewonnen += spielfeldInhalt[6];
+                        feldEinfaerben[2] = 1;
+                        feldEinfaerben[4] = 1;
+                        feldEinfaerben[6] = 1;
                         break;
                     default:
                         break;
@@ -157,8 +180,11 @@ namespace TicTacToe
                 if (gewonnen == "XXX")
                 {
                     GewinnfelderFaerben(feldEinfaerben);
-                    MessageBox.Show("Spieler X hat gewonnen");
-                    SpielfeldLeeren();
+                    labelHinweise.Visibility = Visibility.Visible;
+                    labelHinweise.Content = "Spieler X hat gewonnen";
+                    labelHinweise.Background = Brushes.Gray;
+                    // MessageBox.Show("Spieler X hat gewonnen");
+                    //SpielfeldLeeren();
                 }
                 else if (gewonnen == "OOO")
                 {
@@ -203,9 +229,9 @@ namespace TicTacToe
             else if (istSpielerZwei && feld.Content == null)
             {
                 feld.Content = "O";
-                GewinnerErmitteln();
                 feld.Background = Brushes.LawnGreen;
                 feld.Foreground = Brushes.DimGray;
+                GewinnerErmitteln();
                 istSpielerZwei = false;
                 istSpielerEins = true;
             }
