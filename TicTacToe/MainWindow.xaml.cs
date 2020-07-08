@@ -176,12 +176,16 @@ namespace TicTacToe
             int index = 0;
             foreach (UIElement item in spielfeld.Children)
             {
-                Button feld = item as Button;
-                if (array[index] == 1)
+                if (item is Button feld)
                 {
-                    feld.Background = Brushes.Yellow;
+                    //Button feld = item as Button;
+                    if (array[index] == 1)
+                    {
+                        feld.Background = Brushes.Yellow;
+                    }
+                    index++;
                 }
-                index++;
+                
             }
         }
 
