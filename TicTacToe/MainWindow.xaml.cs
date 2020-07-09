@@ -39,6 +39,7 @@ namespace TicTacToe
                     feld.Background = Brushes.DimGray;
                     feld.Foreground = Brushes.LawnGreen;
                     labelmitteilung.Visibility = Visibility.Hidden;
+                    labelmitteilung.Content = string.Empty;
                 }
             }
         }
@@ -203,10 +204,10 @@ namespace TicTacToe
         {
             Button feld = sender as Button;
 
-            //if (labelmitteilung.Visibility == Visibility.Visible)
-            //{
-            //    labelmitteilung.Visibility = Visibility.Hidden;
-            //}
+            if (labelmitteilung.Visibility == Visibility.Visible)
+            {
+                labelmitteilung.Visibility = Visibility.Hidden;
+            }
 
             if (feld.Content != null)
             {
