@@ -208,34 +208,35 @@ namespace TicTacToe
             {
                 labelmitteilung.Visibility = Visibility.Hidden;
             }
-
-            if (feld.Content != null)
+            else
             {
-                MitteilungAnzeigen("Das Feld ist besetzt!");
-                // MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
-
-                if (IstSpielfeldVoll())
+                if (feld.Content != null)
                 {
-                    SpielfeldLeeren();
+                    MitteilungAnzeigen("Das Feld ist besetzt!");
+
+                    if (IstSpielfeldVoll())
+                    {
+                        SpielfeldLeeren();
+                        istSpielerEins = true;
+                    }
+                }
+
+                if (istSpielerEins && feld.Content == null)
+                {
+                    feld.Content = "X";
+                    GewinnerErmitteln();
+                    istSpielerEins = false;
+                }
+                else if (!istSpielerEins && feld.Content == null)
+                {
+                    feld.Content = "O";
+                    feld.Background = Brushes.LawnGreen;
+                    feld.Foreground = Brushes.DimGray;
+                    GewinnerErmitteln();
                     istSpielerEins = true;
                 }
             }
 
-            if (istSpielerEins && feld.Content == null)
-            {
-                feld.Content = "X";
-                GewinnerErmitteln();
-                istSpielerEins = false;
-            }
-            else if (!istSpielerEins && feld.Content == null)
-            {
-                feld.Content = "O";
-                feld.Background = Brushes.LawnGreen;
-                feld.Foreground = Brushes.DimGray;
-                GewinnerErmitteln();
-                istSpielerEins = true;
-            }
-            
         }
 
     }
