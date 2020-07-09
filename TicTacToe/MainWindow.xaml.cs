@@ -22,30 +22,13 @@ namespace TicTacToe
     public partial class MainWindow : Window
     {
         private bool istSpielerEins = true;
-        private bool istSpielerZwei = false;
         public MainWindow()
         {
             InitializeComponent();
             SpielfeldLeeren();
         }
 
-        #region SpielfeldLeeren
-        // Was ist besser, SpielfeldLeeren() als Einzelanweisungen,
-        // oder eine Schleife
-
-        //public void SpielfeldLeeren()
-        //{
-        //    feld_0_0.Content = null;
-        //    feld_0_1.Content = null;
-        //    feld_0_2.Content = null;
-        //    feld_1_0.Content = null;
-        //    feld_1_1.Content = null;
-        //    feld_1_2.Content = null;
-        //    feld_2_0.Content = null;
-        //    feld_2_1.Content = null;
-        //    feld_2_2.Content = null;
-        //}
-
+        
         public void SpielfeldLeeren()
         {
             foreach (UIElement item in spielfeld.Children)
@@ -55,12 +38,10 @@ namespace TicTacToe
                     feld.Content = null;
                     feld.Background = Brushes.DimGray;
                     feld.Foreground = Brushes.LawnGreen;
-                    labelHinweise.Visibility = Visibility.Hidden;
+                    labelmitteilung.Visibility = Visibility.Hidden;
                 }
             }
         }
-        #endregion
-
 
 
         private bool IstSpielfeldVoll()
@@ -180,11 +161,8 @@ namespace TicTacToe
                 if (gewonnen == "XXX")
                 {
                     GewinnfelderFaerben(feldEinfaerben);
-                    labelHinweise.Visibility = Visibility.Visible;
-                    labelHinweise.Content = "Spieler X hat gewonnen";
-                    labelHinweise.Background = Brushes.Gray;
-                    // MessageBox.Show("Spieler X hat gewonnen");
-                    //SpielfeldLeeren();
+                    MessageBox.Show("Spieler X hat gewonnen");
+                    SpielfeldLeeren();
                 }
                 else if (gewonnen == "OOO")
                 {
@@ -204,7 +182,6 @@ namespace TicTacToe
             {
                 if (item is Button feld)
                 {
-                    //Button feld = item as Button;
                     if (array[index] == 1)
                     {
                         feld.Background = Brushes.Yellow;
@@ -215,36 +192,47 @@ namespace TicTacToe
             }
         }
 
+        private void MitteilungAnzeigen(string mitteilung)
+        {
+            labelmitteilung.Visibility = Visibility.Visible;
+            labelmitteilung.Content = mitteilung;
+            labelmitteilung.Background = Brushes.Gray;
+        }
+
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
             Button feld = sender as Button;
+
+            //if (labelmitteilung.Visibility == Visibility.Visible)
+            //{
+            //    labelmitteilung.Visibility = Visibility.Hidden;
+            //}
+
+            if (feld.Content != null)
+            {
+                MitteilungAnzeigen("Das Feld ist besetzt!");
+                // MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
+
+                if (IstSpielfeldVoll())
+                {
+                    SpielfeldLeeren();
+                    istSpielerEins = true;
+                }
+            }
 
             if (istSpielerEins && feld.Content == null)
             {
                 feld.Content = "X";
                 GewinnerErmitteln();
                 istSpielerEins = false;
-                istSpielerZwei = true;
             }
-            else if (istSpielerZwei && feld.Content == null)
+            else if (!istSpielerEins && feld.Content == null)
             {
                 feld.Content = "O";
                 feld.Background = Brushes.LawnGreen;
                 feld.Foreground = Brushes.DimGray;
                 GewinnerErmitteln();
-                istSpielerZwei = false;
                 istSpielerEins = true;
-            }
-            else if (feld.Content != null)
-            {
-                MessageBox.Show("Dieses Kästchen ist bereits belegt! Wähle ein anderes.", "Unzulässiger Zug");
-   
-                if (IstSpielfeldVoll())
-                {
-                    SpielfeldLeeren();
-                    istSpielerEins = true;
-                    istSpielerZwei = false;
-                }
             }
             
         }
