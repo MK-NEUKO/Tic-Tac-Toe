@@ -21,6 +21,10 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+        private bool gewinnerX = false;
+        private bool gewinnerO = false;
+        int punkteX = 0;
+        int punkteO = 0;
         private bool istSpielerEins = true;
         public MainWindow()
         {
@@ -28,7 +32,7 @@ namespace TicTacToe
             SpielfeldLeeren();
         }
 
-        
+
         public void SpielfeldLeeren()
         {
             foreach (UIElement item in spielfeld.Children)
@@ -60,11 +64,8 @@ namespace TicTacToe
             return true;
         }
 
-        private void GewinnerErmitteln()
-        {          
-            int punkteX = 0;
-            int punkteO = 0;
-
+        private bool GewinnerErmitteln()
+        {
             // Spielfeld auslesen und in einem String abspeichern
             string spielfeldInhalt = null;
 
@@ -79,7 +80,7 @@ namespace TicTacToe
                     else
                     {
                         spielfeldInhalt += feld.Content as string;
-                    }                       
+                    }
                 }
             }
 
@@ -87,7 +88,7 @@ namespace TicTacToe
             // zur Überprüfung für alle 8 Konstellationen zurechtgeschnitten.
             // Zusätzlich wird das Array feldEinfaerben entsprechend initialisiert,
             // um in der Funtion GewinnfelderFaerben() die entsprechenden Felder gelb zu färben.
-            
+
             for (int fall = 1; fall < 9; fall++)
             {
                 string gewonnen = null;
@@ -165,22 +166,19 @@ namespace TicTacToe
                 // Der zurechtgeschnittene String wird geprüft
                 if (gewonnen == "XXX")
                 {
-                    punkteX++; 
                     GewinnfelderFaerben(feldEinfaerben);
-                    MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\n Punkte: " + punkteX);
-                    break;
-                  
+                    gewinnerX = true;
                 }
                 else if (gewonnen == "OOO")
                 {
                     punkteO++;
                     GewinnfelderFaerben(feldEinfaerben);
-                    MessageBox.Show("Spieler O hat gewonnen");
-                    SpielfeldLeeren();
+                    MitteilungAnzeigen("Spieler \"O\" hat gewonnen !\nX = " + punkteX + " : " + punkteO + " = O");
+                    gewinnerO = true;
                 }
 
             }
-
+            return false;
         }
 
         private void GewinnfelderFaerben(int[] array)
@@ -196,7 +194,7 @@ namespace TicTacToe
                     }
                     index++;
                 }
-                
+
             }
         }
 
@@ -205,6 +203,15 @@ namespace TicTacToe
             labelmitteilung.Visibility = Visibility.Visible;
             labelmitteilung.Content = mitteilung;
             labelmitteilung.Background = Brushes.Gray;
+        }
+
+        private void GewinnerSpielstandAnzeigen()
+        {
+            if (gewinnerX)
+            {
+                punkteX++;
+                MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\nX = " + punkteX + " : " + punkteO + " = O");
+            }
         }
 
         private void Feld_Click(object sender, RoutedEventArgs e)
@@ -216,33 +223,36 @@ namespace TicTacToe
                 labelmitteilung.Visibility = Visibility.Hidden;
                 labelmitteilung.Content = string.Empty;
             }
-            else
+
+            if (gewinnerX || gewinnerO)
             {
-                if (istSpielerEins && feld.Content == null)
+                GewinnerSpielstandAnzeigen();
+                SpielfeldLeeren();
+            }
+
+            if (istSpielerEins && feld.Content == null)
+            {
+                feld.Content = "X";
+                GewinnerErmitteln();
+                istSpielerEins = false;
+            }
+            else if (!istSpielerEins && feld.Content == null)
+            {
+                feld.Content = "O";
+                feld.Background = Brushes.LawnGreen;
+                feld.Foreground = Brushes.DimGray;
+                GewinnerErmitteln();
+                istSpielerEins = true;
+            }
+            else if (feld.Content != null)
+            {
+                MitteilungAnzeigen("Das Feld ist besetzt!");
+
+                if (IstSpielfeldVoll())
                 {
-                    feld.Content = "X";
-                    GewinnerErmitteln();
-                    istSpielerEins = false;
-                }
-                else if (!istSpielerEins && feld.Content == null)
-                {
-                    feld.Content = "O";
-                    feld.Background = Brushes.LawnGreen;
-                    feld.Foreground = Brushes.DimGray;
-                    GewinnerErmitteln();
+                    SpielfeldLeeren();
                     istSpielerEins = true;
                 }
-                else if (feld.Content != null)
-                {
-                    MitteilungAnzeigen("Das Feld ist besetzt!");
-
-                    if (IstSpielfeldVoll())
-                    {
-                        SpielfeldLeeren();
-                        istSpielerEins = true;
-                    }
-                }
-               
             }
 
         }
