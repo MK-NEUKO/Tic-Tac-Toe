@@ -61,9 +61,13 @@ namespace TicTacToe
         }
 
         private void GewinnerErmitteln()
-        {
+        {          
+            int punkteX = 0;
+            int punkteO = 0;
+
             // Spielfeld auslesen und in einem String abspeichern
             string spielfeldInhalt = null;
+
             foreach (UIElement item in spielfeld.Children)
             {
                 if (item is Button feld)
@@ -161,12 +165,15 @@ namespace TicTacToe
                 // Der zurechtgeschnittene String wird geprüft
                 if (gewonnen == "XXX")
                 {
+                    punkteX++; 
                     GewinnfelderFaerben(feldEinfaerben);
-                    MessageBox.Show("Spieler X hat gewonnen");
-                    SpielfeldLeeren();
+                    MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\n Punkte: " + punkteX);
+                    break;
+                  
                 }
                 else if (gewonnen == "OOO")
                 {
+                    punkteO++;
                     GewinnfelderFaerben(feldEinfaerben);
                     MessageBox.Show("Spieler O hat gewonnen");
                     SpielfeldLeeren();
@@ -207,20 +214,10 @@ namespace TicTacToe
             if (labelmitteilung.Visibility == Visibility.Visible)
             {
                 labelmitteilung.Visibility = Visibility.Hidden;
+                labelmitteilung.Content = string.Empty;
             }
             else
             {
-                if (feld.Content != null)
-                {
-                    MitteilungAnzeigen("Das Feld ist besetzt!");
-
-                    if (IstSpielfeldVoll())
-                    {
-                        SpielfeldLeeren();
-                        istSpielerEins = true;
-                    }
-                }
-
                 if (istSpielerEins && feld.Content == null)
                 {
                     feld.Content = "X";
@@ -235,6 +232,17 @@ namespace TicTacToe
                     GewinnerErmitteln();
                     istSpielerEins = true;
                 }
+                else if (feld.Content != null)
+                {
+                    MitteilungAnzeigen("Das Feld ist besetzt!");
+
+                    if (IstSpielfeldVoll())
+                    {
+                        SpielfeldLeeren();
+                        istSpielerEins = true;
+                    }
+                }
+               
             }
 
         }

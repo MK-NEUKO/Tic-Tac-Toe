@@ -36,7 +36,7 @@
         <Button Name="feld_0_1" Grid.Column="0" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_1_1" Grid.Column="1" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_2_1" Grid.Column="2" Grid.Row="1" Click="Feld_Click"/>
-        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Hidden" FontSize="40" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Visibility="Hidden" FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
         <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
