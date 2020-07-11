@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace TicTacToe
 {
@@ -26,27 +27,34 @@ namespace TicTacToe
         private int punkteX = 0;
         private int punkteO = 0;
         private bool istSpielerEins = true;
+        private readonly DispatcherTimer _animationTimer = new DispatcherTimer();
+        private bool animation = false;
 
         public MainWindow()
         {
             InitializeComponent();
             SpielfeldLeeren();
+
+            _animationTimer.Tick += new EventHandler(LabelAusblenden);
+            _animationTimer.Interval = TimeSpan.FromSeconds(4);
+
         }
 
         private void Feld_Click(object sender, RoutedEventArgs e)
         {
             Button feld = sender as Button;
 
-            if (labelmitteilung.Visibility == Visibility.Visible)
+            if (labelmitteilung.Visibility == Visibility.Visible || animation)
             {
                 labelmitteilung.Visibility = Visibility.Hidden;
                 labelmitteilung.Content = string.Empty;
 
-                if (gewinnerX || gewinnerO)
+                if (gewinnerX || gewinnerO || IstSpielfeldVoll())
                 {
                     SpielfeldLeeren();
                 }
 
+                animation = false;
                 return;
             }
 
@@ -68,7 +76,7 @@ namespace TicTacToe
             {
                 MitteilungAnzeigen("Das Feld ist besetzt!");
             }
-
+            
         }
 
         public void SpielfeldLeeren()
@@ -218,6 +226,10 @@ namespace TicTacToe
                     gewinnerX = false;
                     GewinnerSpielstandAnzeigen();
                 }
+                else if (IstSpielfeldVoll())
+                {
+                    MitteilungAnzeigen("Unentschieden!\nX = " + punkteX + " : " + punkteO + " = O");
+                }
 
             }
             return false;
@@ -240,11 +252,19 @@ namespace TicTacToe
             }
         }
 
+        private void LabelAusblenden(object sender, EventArgs e)
+        {
+            labelmitteilung.Visibility = Visibility.Hidden;
+            labelmitteilung.Content = string.Empty;
+            animation = true;
+            _animationTimer.Stop();        
+        }
+
         private void MitteilungAnzeigen(string mitteilung)
         {
+            _animationTimer.Start();
             labelmitteilung.Visibility = Visibility.Visible;
             labelmitteilung.Content = mitteilung;
-            labelmitteilung.Background = Brushes.Gray;
         }
 
         private void GewinnerSpielstandAnzeigen()
@@ -252,13 +272,14 @@ namespace TicTacToe
             if (gewinnerX)
             {
                 punkteX++;
-                MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\n       X = " + punkteX + " : " + punkteO + " = O");
+                MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\nX = " + punkteX + " : " + punkteO + " = O");
             }
             else if (gewinnerO)
             {
                 punkteO++;
-                MitteilungAnzeigen("Spieler \"O\" hat gewonnen !\n       X = " + punkteX + " : " + punkteO + " = O");
+                MitteilungAnzeigen("Spieler \"O\" hat gewonnen !\nX = " + punkteX + " : " + punkteO + " = O");
             }
+            
         }
        
     }

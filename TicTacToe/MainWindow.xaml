@@ -36,8 +36,14 @@
         <Button Name="feld_0_1" Grid.Column="0" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_1_1" Grid.Column="1" Grid.Row="1" Click="Feld_Click"/>
         <Button Name="feld_2_1" Grid.Column="2" Grid.Row="1" Click="Feld_Click"/>
-        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" FontSize="25" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" FontStyle="Italic"/>
-
+        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" 
+               FontSize="25" FontWeight="Bold" FontStyle="Italic" HorizontalContentAlignment="Right"
+               VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Label.Background>
+                <SolidColorBrush Color="Gray" Opacity="0.75" />
+            </Label.Background>
+        </Label>
+        
         <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_2_2" Grid.Column="2" Grid.Row="2" Click="Feld_Click"/>
