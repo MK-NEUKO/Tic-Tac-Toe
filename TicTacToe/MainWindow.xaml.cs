@@ -217,6 +217,7 @@ namespace TicTacToe
                     gewinnerX = true;
                     gewinnerO = false;
                     GewinnerSpielstandAnzeigen();
+                    break;
                 }
                 else if (gewonnen == "OOO")
                 {
@@ -225,10 +226,12 @@ namespace TicTacToe
                     gewinnerO = true;
                     gewinnerX = false;
                     GewinnerSpielstandAnzeigen();
+                    break;
                 }
                 else if (IstSpielfeldVoll())
                 {
                     MitteilungAnzeigen("Unentschieden!\nX = " + punkteX + " : " + punkteO + " = O");
+                    break;
                 }
 
             }
