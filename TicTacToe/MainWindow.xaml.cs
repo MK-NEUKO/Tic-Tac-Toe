@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Threading;
 
@@ -256,7 +257,7 @@ namespace TicTacToe
         {
             _animationTimer.Start();
             labelmitteilung.Visibility = Visibility.Visible;
-            labelmitteilung.Content = mitteilung;
+            labelmitteilung.Content = new TextBlock { Inlines = { mitteilung }, TextAlignment = TextAlignment.Center };
         }
 
         private void GewinnerSpielstandAnzeigen()
@@ -264,7 +265,7 @@ namespace TicTacToe
             if (gewinnerX)
             {
                 punkteX++;
-                MitteilungAnzeigen("Spieler \"X\" hat gewonnen !\nX = " + punkteX + " : " + punkteO + " = O");
+                MitteilungAnzeigen($"Spieler \"X\" hat gewonnen !{Environment.NewLine}X = {punkteX} : {punkteO} = O");
             }
             else if (gewinnerO)
             {
