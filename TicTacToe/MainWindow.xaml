@@ -46,6 +46,13 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
     </Window.Resources>
 
     <Grid x:Name="spielfeld">
@@ -58,6 +65,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Button Name="feld_0_0" Grid.Column="0" Grid.Row="0" Click="Feld_Click"/>
         <Button Name="feld_1_0" Grid.Column="1" Grid.Row="0" Click="Feld_Click"/>
@@ -71,5 +79,9 @@
         <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
         <Button Name="feld_2_2" Grid.Column="2" Grid.Row="2" Click="Feld_Click"/>
+
+        <TextBlock x:Name="playerOne" Grid.Column="0" Grid.Row="3" Text="playerOne"/>
+        <TextBlock x:Name="scoreDisplay" Grid.Column="1" Grid.Row="3" Text="0:0"/>
+        <TextBlock x:Name="playerTwo" Grid.Column="3" Grid.Row="3" Text="playerTwo"/>
     </Grid>
 </Window>
