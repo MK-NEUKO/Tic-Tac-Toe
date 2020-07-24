@@ -14,3 +14,4 @@ Nachdem die Übungsaufgaben abgearbeitet sind möchte ich das bestehende Spiel m
 * Wird ein neuer Spielername, oder neue Spielernamen vergeben, wird der Spielstand zurückgesetzt.
 * Die Spielernamen, der Spielstand, sowie das gesamte Spielfeld im aktuellen Zustand wird gespeichert. 
   Bei einem Neu-Start des Programms, wird der letzte Stand geladen. 
+* Das Aussehen des Spielfelds wird überarbeitet. 
