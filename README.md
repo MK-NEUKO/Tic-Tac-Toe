@@ -5,7 +5,7 @@ https://www.lernmoment.de/lernmail-kurse/wpf-tictactoe-fuer-einsteiger
 
 # Weiterentwicklung
 
-Nachdem die Übungsaufgaben abgearbeitet sind möchte ich das bestehende Spiel mit folgende Neuerungen weiterentwickeln.
+Nachdem die Übungsaufgaben abgearbeitet sind, möchte ich das bestehende Spiel mit folgende Neuerungen weiterentwickeln.
 * OOP nach MVVM-Pattern
 * Unter dem Spielfeld sollen, Name-Spidler"X", Spielstand, Name-Spieler"O" angezeigt werden.
 * Die Namen der Spieler können eingegeben werden.
