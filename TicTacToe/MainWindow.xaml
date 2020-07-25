@@ -5,44 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="MK-NEUKO    Tic Tac Toe" Height="500" Width="500">
+        Title="MK-NEUKO    Tic Tac Toe" Height="586" Width="506">
 
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources\GamePieces.xaml" />
+                <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
-    <Grid x:Name="spielfeld">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
-        </Grid.RowDefinitions>
-        <Button Name="feld_0_0" Grid.Column="0" Grid.Row="0" Click="Feld_Click"/>
-        <Button Name="feld_1_0" Grid.Column="1" Grid.Row="0" Click="Feld_Click"/>
-        <Button Name="feld_2_0" Grid.Column="2" Grid.Row="0" Click="Feld_Click"/>
+    <Border BorderBrush="Silver" BorderThickness="3">
+        <Grid x:Name="playBoard">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
 
-        <Button Name="feld_0_1" Grid.Column="0" Grid.Row="1" Click="Feld_Click"/>
-        <Button Name="feld_1_1" Grid.Column="1" Grid.Row="1" Click="Feld_Click"/>
-        <Button Name="feld_2_1" Grid.Column="2" Grid.Row="1" Click="Feld_Click"/>   
-        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+            <Grid x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
 
-        <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
-        <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
-        <Button Name="feld_2_2" Grid.Column="2" Grid.Row="2" Click="Feld_Click"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Spieler X"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="Spielstand"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Spieler O"/>
 
-        <TextBlock x:Name="playerOne" Grid.Column="0" Grid.Row="3" Text="playerOne"/>
-        <TextBlock x:Name="scoreDisplay" Grid.Column="1" Grid.Row="3" Text="0:0"/>
-        <TextBlock x:Name="playerTwo" Grid.Column="3" Grid.Row="3" Text="playerTwo"/>
-    </Grid>
+                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0"/>
+                <TextBox x:Name="scoreDisplay" Grid.Row="1" Grid.Column="1"/>
+                <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2"/>
+
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

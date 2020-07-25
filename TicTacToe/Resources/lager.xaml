@@ -1,0 +1,23 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:TicTacToe.Resources">
+
+    <!--
+        <Button Name="feld_0_0" Grid.Column="0" Grid.Row="0" Click="Feld_Click"/>
+        <Button Name="feld_1_0" Grid.Column="1" Grid.Row="0" Click="Feld_Click"/>
+        <Button Name="feld_2_0" Grid.Column="2" Grid.Row="0" Click="Feld_Click"/>
+
+        <Button Name="feld_0_1" Grid.Column="0" Grid.Row="1" Click="Feld_Click"/>
+        <Button Name="feld_1_1" Grid.Column="1" Grid.Row="1" Click="Feld_Click"/>
+        <Button Name="feld_2_1" Grid.Column="2" Grid.Row="1" Click="Feld_Click"/>   
+        <Label x:Name="labelmitteilung" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3"/>
+
+        <Button Name="feld_0_2" Grid.Column="0" Grid.Row="2" Click="Feld_Click"/>
+        <Button Name="feld_1_2" Grid.Column="1" Grid.Row="2" Click="Feld_Click"/>
+        <Button Name="feld_2_2" Grid.Column="2" Grid.Row="2" Click="Feld_Click"/>
+
+        <TextBlock x:Name="playerOne" Grid.Column="0" Grid.Row="3" Text="playerOne"/>
+        <TextBlock x:Name="scoreDisplay" Grid.Column="1" Grid.Row="3" Text="0:0"/>
+        <TextBlock x:Name="playerTwo" Grid.Column="3" Grid.Row="3" Text="playerTwo"/>-->
+
+</ResourceDictionary>

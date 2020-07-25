@@ -6,4 +6,12 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\calkboard.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\calkboard.jpg" />
+  </ItemGroup>
+
 </Project>
