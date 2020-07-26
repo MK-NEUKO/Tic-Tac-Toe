@@ -7,11 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\calkboard.jpg" />
+    <None Remove="Images\chalkboard.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\calkboard.jpg" />
+    <Resource Include="Images\chalkboard.png" />
   </ItemGroup>
 
 </Project>

@@ -2,10 +2,18 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:TicTacToe.Resources">
 
-    <Style TargetType="Grid">
+    <!--<Style TargetType="Grid">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="..\Images\calkboard.jpg"/>
+                <ImageBrush ImageSource="..\Images\chalkboard.png"/>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
+    <Style TargetType="Label">
+        <Setter Property="Background">
+            <Setter.Value>
+                <ImageBrush ImageSource="..\Images\chalkboard.png"/>
             </Setter.Value>
         </Setter>
     </Style>
@@ -19,7 +27,7 @@
         <Setter Property="BorderThickness" Value="1"/>
     </Style>
 
-    <Style TargetType="Label">
+    <!--<Style TargetType="Label">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontSize" Value="25"/>
@@ -47,7 +55,7 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>
+    </Style>-->
 
 
 </ResourceDictionary>

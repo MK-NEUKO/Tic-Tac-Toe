@@ -31,13 +31,15 @@
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
+            <Label Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+
             <Grid x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
+                <Grid.RowDefinitions >
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
