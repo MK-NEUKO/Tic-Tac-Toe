@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\buttonMousOver.png" />
+    <None Remove="Images\buttonMouseOver.png" />
     <None Remove="Images\chalkboard.png" />
     <None Remove="Images\chalkboardDisplay.png" />
     <None Remove="Images\displayHeader.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Images\buttonMousOver.png" />
+    <Resource Include="Images\buttonMouseOver.png" />
     <Resource Include="Images\chalkboard.png" />
     <Resource Include="Images\chalkboardDisplay.png" />
     <Resource Include="Images\displayHeader.png" />
