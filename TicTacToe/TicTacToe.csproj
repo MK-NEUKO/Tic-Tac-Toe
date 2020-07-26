@@ -8,12 +8,14 @@
 
   <ItemGroup>
     <None Remove="Images\chalkboard.png" />
-    <None Remove="Images\display.png" />
+    <None Remove="Images\chalkboardDisplay.png" />
+    <None Remove="Images\displayHeader.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Images\chalkboard.png" />
-    <Resource Include="Images\display.png" />
+    <Resource Include="Images\chalkboardDisplay.png" />
+    <Resource Include="Images\displayHeader.png" />
   </ItemGroup>
 
 </Project>

@@ -2,30 +2,22 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:TicTacToe.Resources">
 
-    <!--<Style TargetType="Grid">
+    <Style x:Key="labelChalkboard" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
                 <ImageBrush ImageSource="..\Images\chalkboard.png"/>
             </Setter.Value>
         </Setter>
-    </Style>-->
-
-    <Style x:Key="labeldisplay" TargetType="{x:Type Label}">
-        <Setter Property="Background">
-            <Setter.Value>
-                <ImageBrush ImageSource="..\Images\display.png"/>
-            </Setter.Value>
-        </Setter>
     </Style>
 
-    <Style TargetType="Button">
-        <!--<Setter Property="Background" Value="DimGray"/>-->
+    <!--<Style TargetType="Button">
+        <Setter Property="Background" Value="DimGray"/>
         <Setter Property="FontSize" Value="80"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="LawnGreen"/>
         <Setter Property="BorderBrush" Value="DarkGray"/>
         <Setter Property="BorderThickness" Value="1"/>
-    </Style>
+    </Style>-->
 
     <!--<Style TargetType="Label">
         <Setter Property="HorizontalAlignment" Value="Center"/>
