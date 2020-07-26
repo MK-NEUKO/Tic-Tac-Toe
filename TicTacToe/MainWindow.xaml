@@ -31,7 +31,7 @@
                 <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
-            <Label Grid.ColumnSpan="3" Grid.RowSpan="3"/>
+            <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
 
             <Grid x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
@@ -44,6 +44,8 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
+                <Label Style="{StaticResource labeldisplay}" Grid.Row="0" Grid.ColumnSpan="3"/>
+                <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Silver" BorderThickness="0,3,0,3"/>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Spieler X"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Spielstand"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Spieler O"/>
