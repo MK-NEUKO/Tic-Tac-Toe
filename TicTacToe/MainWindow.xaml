@@ -17,7 +17,9 @@
     </Window.Resources>
 
     <Border BorderBrush="Silver" BorderThickness="3">
-        <Grid x:Name="playBoard">
+        
+        <!--#region Game Board-->
+        <Grid x:Name="gameBoard">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -32,18 +34,21 @@
             </Grid.RowDefinitions>
 
             <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-            <Button Grid.Column="0" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LawnGreen"  Content="X"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="1" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="O"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="2" Grid.Row="0" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="X"   FontFamily="Cabin Sketch" FontSize="150"/>
+            <Button Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="X"/>
+            <Button Grid.Column="1" Grid.Row="0" Foreground="White"  Content="O"/>
+            <Button Grid.Column="2" Grid.Row="0" Foreground="White"  Content="X"/>
 
-            <Button Grid.Column="0" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="O"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="1" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LawnGreen"  Content="X"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="2" Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="X"   FontFamily="Cabin Sketch" FontSize="150"/>
+            <Button Grid.Column="0" Grid.Row="1" Foreground="White"  Content="O"/>
+            <Button Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="X"/>
+            <Button Grid.Column="2" Grid.Row="1" Foreground="White"  Content="X"/>
 
-            <Button Grid.Column="0" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="O"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="1" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White"  Content="O"   FontFamily="Cabin Sketch" FontSize="150"/>
-            <Button Grid.Column="2" Grid.Row="2" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="LawnGreen"  Content="X"   FontFamily="Cabin Sketch" FontSize="150"/>
+            <Button Grid.Column="0" Grid.Row="2" Foreground="White"  Content="O"/>
+            <Button Grid.Column="1" Grid.Row="2" Foreground="White"  Content="O"/>
+            <Button Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="X"/>
+        <!--#endregion-->
 
+
+            <!--#region Display-->
             <Grid x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -55,22 +60,27 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
+
+                <!--#region Display Header-->
                 <Label Style="{StaticResource labelDisplayHeader}" Grid.Row="0" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Silver" BorderThickness="0,3,0,3"/>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Spieler X"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Spielstand"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Spieler O" Foreground="#FF283C28"/>
+                <!--#endregion-->
 
+
+                <!--#region Display TextBox-->
                 <Label Style="{StaticResource labelDisplay}" Grid.Row="1" Grid.ColumnSpan="3"/>
-                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="2,0,2,0"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" Text="Silver" FontFamily="Cabin Sketch" FontSize="35" Foreground="White"/>
-                <TextBlock Grid.Row="1" Grid.Column="1" Text="3 : 5" FontFamily="Cabin Sketch" FontSize="35" Foreground="White"/>
-                <TextBlock Grid.Row="1" Grid.Column="2" Text="Surfer" FontFamily="Cabin Sketch" FontSize="35" Foreground="White"/>
-                <!--<TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="COWBOY"/>
+                <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
+                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="COWBOY"/>
                 <TextBox x:Name="scoreDisplay" Grid.Row="1" Grid.Column="1" Text="2 : 4"/>
-                <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="XRIDER"/>-->
+                <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="XRIDER"/>
+                <!--#endregion-->
 
             </Grid>
+            <!--#endregion-->
+            
         </Grid>
     </Border>
 </Window>

@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:TicTacToe.Resources">
 
+    <!--#region Game Board Background-->
+    
     <Style x:Key="labelChalkboard" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
@@ -9,45 +11,33 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!--#region -->
 
-    <!--<Style TargetType="Button">
-        <Setter Property="Background" Value="DimGray"/>
-        <Setter Property="FontSize" Value="80"/>
-        <Setter Property="FontWeight" Value="Bold"/>
-        <Setter Property="Foreground" Value="LawnGreen"/>
-        <Setter Property="BorderBrush" Value="DarkGray"/>
-        <Setter Property="BorderThickness" Value="1"/>
-    </Style>-->
+    <!--#region Game Board Buttons-->
 
-    <!--<Style TargetType="Label">
-        <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="FontSize" Value="25"/>
-        <Setter Property="FontWeight" Value="Black"/>
-        <Setter Property="Background">
-            <Setter.Value>
-                <SolidColorBrush Color="Gray" Opacity="0.75"/>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="BorderBrush">
-            <Setter.Value>
-                <SolidColorBrush Color="Gray" Opacity="0.75"/>
-            </Setter.Value>
-        </Setter>
-        <Setter Property="BorderThickness" Value="5"/>
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="{x:Null}"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+        <Setter Property="FontFamily" Value="Cabin Sketch"/>
+        <Setter Property="FontSize" Value="150"/>
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="Label">
-                    <Border BorderThickness="{TemplateBinding BorderThickness}"
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                Background="{TemplateBinding Background}"
-                                CornerRadius="5">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-    </Style>-->
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{x:Null}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--#endregion-->
 
 
 </ResourceDictionary>

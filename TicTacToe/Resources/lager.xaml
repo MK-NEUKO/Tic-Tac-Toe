@@ -20,4 +20,49 @@
         <TextBlock x:Name="scoreDisplay" Grid.Column="1" Grid.Row="3" Text="0:0"/>
         <TextBlock x:Name="playerTwo" Grid.Column="3" Grid.Row="3" Text="playerTwo"/>-->
 
+
+
+
+    <!--<Style TargetType="Button">
+        <Setter Property="Background" Value="DimGray"/>
+        <Setter Property="FontSize" Value="80"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="LawnGreen"/>
+        <Setter Property="BorderBrush" Value="DarkGray"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>-->
+
+    
+    
+    
+    <!--<Style TargetType="Label">
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="FontWeight" Value="Black"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <SolidColorBrush Color="Gray" Opacity="0.75"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <SolidColorBrush Color="Gray" Opacity="0.75"/>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Label">
+                    <Border BorderThickness="{TemplateBinding BorderThickness}"
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+
 </ResourceDictionary>
