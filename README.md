@@ -7,7 +7,7 @@ https://www.lernmoment.de/lernmail-kurse/wpf-tictactoe-fuer-einsteiger
 
 Nachdem die Übungsaufgaben abgearbeitet sind, möchte ich das bestehende Spiel mit folgende Neuerungen weiterentwickeln.
 * OOP nach MVVM-Pattern
-* Unter dem Spielfeld sollen, Name-Spidler"X", Spielstand, Name-Spieler"O" angezeigt werden.
+* Unter dem Spielfeld sollen, Name-Spieler"X", Spielstand, Name-Spieler"O" angezeigt werden.
 * Die Namen der Spieler können eingegeben werden.
 * Erreicht ein Spieler mehr als 100 Punkte, wird der Spielstand automatisch zurückgesetzt.
 * Der Spielstand kann jederzeit zurückgesetzt werden.
