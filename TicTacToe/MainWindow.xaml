@@ -65,9 +65,10 @@
                 <!--#region Display Header-->
                 <Label Style="{StaticResource labelDisplayHeader}" Grid.Row="0" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Silver" BorderThickness="0,3,0,3"/>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Spieler X"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Spielstand"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Text="Spieler O" Foreground="#FF283C28"/>
+                <Border Grid.Row="0" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Player X"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Text="Punkte"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Player O" Foreground="#FF283C28"/>
                 <!--#endregion-->
 
 

@@ -15,7 +15,7 @@
     <Style TargetType="TextBlock">
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Setter Property="FontFamily" Value="Russo One"/>
+        <Setter Property="FontFamily" Value="Planet N"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="LawnGreen"/>
     </Style>

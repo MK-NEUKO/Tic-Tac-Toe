@@ -13,6 +13,7 @@
     <None Remove="Images\displayHeader.png" />
     <None Remove="Resources\Font\erasdust.ttf" />
     <None Remove="Resources\Font\Eraser.ttf" />
+    <None Remove="Resources\Font\Planetnv2.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +23,7 @@
     <Resource Include="Images\displayHeader.png" />
     <Resource Include="Resources\Font\erasdust.ttf" />
     <Resource Include="Resources\Font\Eraser.ttf" />
+    <Resource Include="Resources\Font\Planetnv2.ttf" />
   </ItemGroup>
 
 </Project>
