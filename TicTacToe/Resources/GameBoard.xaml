@@ -19,7 +19,7 @@
     <Style TargetType="Button">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
-        <Setter Property="FontFamily" Value="Cabin Sketch"/>
+        <Setter Property="FontFamily" Value="Eraser"/>
         <Setter Property="FontSize" Value="150"/>
         <Setter Property="Template">
             <Setter.Value>

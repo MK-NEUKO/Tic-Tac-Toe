@@ -11,6 +11,8 @@
     <None Remove="Images\chalkboard.png" />
     <None Remove="Images\chalkboardDisplay.png" />
     <None Remove="Images\displayHeader.png" />
+    <None Remove="Resources\Font\erasdust.ttf" />
+    <None Remove="Resources\Font\Eraser.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,6 +20,8 @@
     <Resource Include="Images\chalkboard.png" />
     <Resource Include="Images\chalkboardDisplay.png" />
     <Resource Include="Images\displayHeader.png" />
+    <Resource Include="Resources\Font\erasdust.ttf" />
+    <Resource Include="Resources\Font\Eraser.ttf" />
   </ItemGroup>
 
 </Project>
