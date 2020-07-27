@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:MainViewModel x:Key="vm"/>
+            <local:TicTacToe x:Key="vm"/>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -74,7 +74,7 @@
                 <!--#region Display TextBox-->
                 <Label Style="{StaticResource labelDisplay}" Grid.Row="1" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
-                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="COWBOY"/>
+                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
                 <TextBox x:Name="scoreDisplay" Grid.Row="1" Grid.Column="1" Text="2 : 4"/>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="XRIDER"/>
                 <!--#endregion-->

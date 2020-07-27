@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
 using System.Windows.Threading;
+using TicTacToe.Model;
 
 namespace TicTacToe
 {
@@ -12,6 +13,7 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
+        PlayerData player = new PlayerData { Name = "Michael" };
         //private bool gewinnerX = false;
         //private bool gewinnerO = false;
         //private int punkteX = 0;
@@ -23,6 +25,7 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = player;
             //SpielfeldLeeren();
 
             //_animationTimer.Tick += new EventHandler(LabelAusblenden);

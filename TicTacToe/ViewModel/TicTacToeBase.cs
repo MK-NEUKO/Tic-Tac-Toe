@@ -6,7 +6,7 @@ using System.Text;
 
 namespace TicTacToe.ViewModel
 {
-    public abstract class ViewModelBase : INotifyPropertyChanged
+    public abstract class TicTacToeBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
