@@ -76,8 +76,16 @@
                 <Label Style="{StaticResource labelDisplay}" Grid.Row="1" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
                 <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding Name}"/>
-                <TextBox x:Name="scoreDisplay" Grid.Row="1" Grid.Column="1" Text="2 : 4"/>
-                <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="XRIDER"/>
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.ColumnSpan="2" FontSize="50" FontFamily="Eraser" Foreground="White" Margin="0,0,0,15" Text=":"/>
+                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding Points}"/>
+                    <TextBox x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding Points}"/>
+                </Grid>
+                <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding Name}"/>
                 <!--#endregion-->
 
             </Grid>
