@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe.ViewModel"
         mc:Ignorable="d"
-        Title="MK-NEUKO    Tic Tac Toe" Height="586" Width="506">
+        Title="MK-NEUKO    Tic Tac Toe" Height="606" Width="506">
 
     <Window.Resources>
         <ResourceDictionary>
@@ -18,7 +18,7 @@
     </Window.Resources>
 
     <Border BorderBrush="Silver" BorderThickness="3">
-        
+
         <!--#region Game Board-->
         <Grid x:Name="gameBoard">
 
@@ -31,22 +31,22 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
             <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-            <Button Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="X"/>
-            <Button Grid.Column="1" Grid.Row="0" Foreground="White" Content=" "/>
-            <Button Grid.Column="2" Grid.Row="0" Foreground="White"/>
-
-            <Button Grid.Column="0" Grid.Row="1" Foreground="White"  Content="O"/>
-            <Button Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="X"/>
-            <Button Grid.Column="2" Grid.Row="1" Foreground="White"  Content="X"/>
-
-            <Button Grid.Column="0" Grid.Row="2" Foreground="White"  Content="O"/>
-            <Button Grid.Column="1" Grid.Row="2" Foreground="White"  Content="O"/>
-            <Button Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="X"/>
-        <!--#endregion-->
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="X"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="0" Foreground="White" Content=" "/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="0" Foreground="White"/>
+                   
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="1" Foreground="White"  Content="O"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="X"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="1" Foreground="White"  Content="X"/>
+                   
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="2" Foreground="White"  Content="O"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="2" Foreground="White"  Content="O"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="X"/>
+            <!--#endregion-->
 
 
             <!--#region Display-->
@@ -59,6 +59,7 @@
                 <Grid.RowDefinitions >
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="50"/>
+                    <RowDefinition Height="20"/>
                 </Grid.RowDefinitions>
 
 
@@ -86,11 +87,15 @@
                     <TextBox x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding Points}"/>
                 </Grid>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding Name}"/>
+
+                <Button Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerX" Grid.Row="2" Grid.Column="0" Content="Enter"/>
+                <Button Style="{StaticResource buttonDisplay}" x:Name="resetPoints" Grid.Row="2" Grid.Column="1" Content="Reset"/>
+                <Button Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerO" Grid.Row="2" Grid.Column="2" Content="Enter"/>
                 <!--#endregion-->
 
             </Grid>
             <!--#endregion-->
-            
+
         </Grid>
     </Border>
 </Window>

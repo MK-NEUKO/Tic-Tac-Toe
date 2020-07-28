@@ -16,7 +16,7 @@
 
     <!--#region Game Board Buttons-->
 
-    <Style TargetType="Button">
+    <Style x:Key="buttonGameBoard" TargetType="Button">
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="FontFamily" Value="Eraser"/>

@@ -43,6 +43,24 @@
     </Style>
     
     <!--#endregion-->
+    
+    <!--#region Display Buttons -->
+
+    <Style x:Key="buttonDisplay" TargetType="Button">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Planet N"/>
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFD4D4D4" Offset="0.43"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--#region -->
 
     
 
