@@ -13,7 +13,7 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        PlayerData playerXX = new PlayerData { Name = "Michael", Points = 5, ReadyToPlay = true };
+        
         //PlayerData playerOO = new PlayerData { Name = "Hans", Points = 7, ReadyToPlay = false };
         //private bool gewinnerX = false;
         //private bool gewinnerO = false;
@@ -26,7 +26,6 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = playerXX;
             //SpielfeldLeeren();
 
             //_animationTimer.Tick += new EventHandler(LabelAusblenden);
