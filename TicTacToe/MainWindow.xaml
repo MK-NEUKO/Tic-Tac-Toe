@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:TicTacToe x:Key="vm"/>
+            <local:MainViewModel x:Key="viewmodel"/>
         </ResourceDictionary>
     </Window.Resources>
 
@@ -50,7 +50,7 @@
 
 
             <!--#region Display-->
-            <Grid x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
+            <Grid DataContext="{StaticResource viewmodel}" x:Name="gameDisplay" Grid.Row="3" Grid.ColumnSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
