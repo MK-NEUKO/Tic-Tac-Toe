@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TicTacToe.ViewModel
 {
-    class TicTacToe
+    class TicTacToe : TicTacToeBase
     {
     }
 }

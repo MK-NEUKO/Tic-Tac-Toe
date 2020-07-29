@@ -5,7 +5,7 @@ using TicTacToe.ViewModel;
 
 namespace TicTacToe.Model
 {
-    class TicTacToeData
+    class TicTacToeData : TicTacToeBase
     {
     }
 }
