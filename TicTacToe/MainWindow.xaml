@@ -67,7 +67,7 @@
                 <Label Style="{StaticResource labelDisplayHeader}" Grid.Row="0" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Silver" BorderThickness="0,3,0,3"/>
                 <Border Grid.Row="0" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="Player X"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding PlayerO.Name}"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" Text="Punkte"/>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Player O" Foreground="#FF283C28"/>
                 <!--#endregion-->
@@ -76,14 +76,14 @@
                 <!--#region Display TextBox-->
                 <Label Style="{StaticResource labelDisplay}" Grid.Row="1" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
-                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding PlayerX.Name}"/>
+                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding Path=PlayerO.Name}"/>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.ColumnSpan="2" FontSize="50" FontFamily="Eraser" Foreground="White" Margin="0,0,0,15" Text=":"/>
-                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points}"/>
+                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points, Mode=TwoWay}"/>
                     <TextBox x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding PlayerO.Points}"/>
                 </Grid>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding PlayerO.Name}"/>

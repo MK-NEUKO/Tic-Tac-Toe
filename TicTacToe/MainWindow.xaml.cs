@@ -13,14 +13,10 @@ namespace TicTacToe
     /// </summary>
     public partial class MainWindow : Window
     {
-        //GameData PlayerX = new GameData { Name = "Horst", Points = 14, InAction = false };
-        //GameData PlayerO = new GameData { Name = "Wurst", Points = 34, InAction = true };
 
         public MainWindow()
         {
             InitializeComponent();
-            
-
         }
     }
 
