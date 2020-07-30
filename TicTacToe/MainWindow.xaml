@@ -13,14 +13,14 @@
                 <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
-           
+            <local:MainViewModel x:Key="vm"/>
         </ResourceDictionary>
     </Window.Resources>
 
     <Border BorderBrush="Silver" BorderThickness="3">
 
         <!--#region Game Board-->
-        <Grid x:Name="gameBoard">
+        <Grid DataContext="{StaticResource vm}" x:Name="gameBoard">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

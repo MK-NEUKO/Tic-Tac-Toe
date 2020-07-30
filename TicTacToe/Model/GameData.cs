@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
+using TicTacToe.ViewModel;
 
 namespace TicTacToe
 {
-    class GameData 
+    class GameData : ViewModelBase
     {
         private string _name;
 
         public string Name
         {
             get { return _name; }
-            set { _name = value; }
+            set { SetProperty<string>(ref _name, value); }
         }
 
         private int _points;
@@ -19,7 +21,7 @@ namespace TicTacToe
         public int Points
         {
             get { return _points; }
-            set { _points = value; }
+            set { SetProperty<int>(ref _points, value); }
         }
 
         private bool _inAction;
@@ -27,7 +29,7 @@ namespace TicTacToe
         public bool InAction
         {
             get { return _inAction; }
-            set { _inAction = value; }
+            set { SetProperty<bool>(ref _inAction, value); }
         }
 
     }
