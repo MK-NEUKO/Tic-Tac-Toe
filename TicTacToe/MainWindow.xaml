@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:TicTacToe x:Key="vm"/>
+           
         </ResourceDictionary>
     </Window.Resources>
 
