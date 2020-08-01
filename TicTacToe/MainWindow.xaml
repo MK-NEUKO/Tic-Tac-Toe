@@ -38,11 +38,11 @@
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="X"/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="0" Foreground="White" Content=" "/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="0" Foreground="White"/>
-                   
+
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="1" Foreground="White"  Content="O"/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="X"/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="1" Foreground="White"  Content="X"/>
-                   
+
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="2" Foreground="White"  Content="O"/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="2" Foreground="White"  Content="O"/>
             <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="X"/>
@@ -67,23 +67,22 @@
                 <Label Style="{StaticResource labelDisplayHeader}" Grid.Row="0" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="0" Grid.ColumnSpan="3" BorderBrush="Silver" BorderThickness="0,3,0,3"/>
                 <Border Grid.Row="0" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
-                <TextBlock Grid.Row="0" Grid.Column="0" Text="{Binding PlayerO.Name}"/>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Punkte"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Text="Player O" Foreground="#FF283C28"/>
+                <TextBlock Style="{StaticResource textBlockDisplayHeaderPlayerX}" Grid.Row="0" Grid.Column="0" Text="Player X"/>
+                <TextBlock Style="{StaticResource textBlockDisplayHeader}" x:Name="punkte" Grid.Row="0" Grid.Column="1" Text="Punkte"/>
+                <TextBlock Style="{StaticResource textBlockDisplayHeaderPlayerO}" Grid.Row="0" Grid.Column="2" Text="Player O"/>
                 <!--#endregion-->
 
 
                 <!--#region Display TextBox-->
                 <Label Style="{StaticResource labelDisplay}" Grid.Row="1" Grid.ColumnSpan="3"/>
                 <Border Grid.Row="1" Grid.Column="1" BorderBrush="Silver" BorderThickness="3,0,3,0"/>
-                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding Path=PlayerO.Name}"/>
+                <TextBox x:Name="playerXName" Grid.Row="1" Grid.Column="0" Text="{Binding PlayerX.Name}"/>
                 <Grid Grid.Row="1" Grid.Column="1">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.ColumnSpan="2" FontSize="50" FontFamily="Eraser" Foreground="White" Margin="0,0,0,15" Text=":"/>
-                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points, Mode=TwoWay}"/>
+                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points}"/>
                     <TextBox x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding PlayerO.Points}"/>
                 </Grid>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding PlayerO.Name}"/>
