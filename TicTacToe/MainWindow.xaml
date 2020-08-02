@@ -87,9 +87,9 @@
                 </Grid>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding PlayerO.Name}"/>
 
-                <Button Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerX" Grid.Row="2" Grid.Column="0" Content="Enter"/>
-                <Button Style="{StaticResource buttonDisplay}" x:Name="resetPoints" Grid.Row="2" Grid.Column="1" Content="Reset"/>
-                <Button Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerO" Grid.Row="2" Grid.Column="2" Content="Enter"/>
+                <Button Command="{Binding EnterNamePlayerXCommand}" Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerX" Grid.Row="2" Grid.Column="0" Content="Enter"/>
+                <Button Command="{Binding ResetPointsCommand}" Style="{StaticResource buttonDisplay}" x:Name="resetPoints" Grid.Row="2" Grid.Column="1" Content="Reset"/>
+                <Button Command="{Binding EnterNamePlayerOCommand}" Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerO" Grid.Row="2" Grid.Column="2" Content="Enter"/>
                 <!--#endregion-->
 
             </Grid>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace TicTacToe.ViewModel
 {
@@ -22,7 +23,12 @@ namespace TicTacToe.ViewModel
             set { _playerO = value; }
         }
 
-        
+        public ICommand EnterNamePlayerXCommand { get; set; }
+        public ICommand EnterNamePlayerOCommand { get; set; }
+        public ICommand ResetPointsCommand { get; set; }
+
+
+
         public MainViewModel()
         {
             PlayerX = new GameData { Name = "Hallo X", Points = 12, InAction = true };

@@ -76,7 +76,7 @@
     <!--#region Display Buttons -->
 
     <Style x:Key="buttonDisplay" TargetType="Button">
-        <Setter Property="Foreground" Value="LawnGreen"/>
+        <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontFamily" Value="Planet N"/>
         <Setter Property="FontSize" Value="14"/>
         <Setter Property="Background">
