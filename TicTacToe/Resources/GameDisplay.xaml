@@ -8,7 +8,7 @@
     <Style x:Key="labelDisplayHeader" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="..\Images\displayHeader.png"/>
+                <ImageBrush ImageSource="/Images/displayHeader.png"/>
             </Setter.Value>
         </Setter>
     </Style>
@@ -55,7 +55,7 @@
     <Style x:Key="labelDisplay" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="/Images/chalkboardDisplay.png"/>
+                <ImageBrush ImageSource="..\Images\chalkboardDisplay.png"/>
             </Setter.Value>
         </Setter>
     </Style>
