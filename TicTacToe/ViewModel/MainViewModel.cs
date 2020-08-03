@@ -33,7 +33,42 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new GameData { Name = "Hallo X", Points = 12, InAction = true };
             PlayerO = new GameData { Name = "Hallo O", Points = 4, InAction = false };
+
+            EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
+            EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
+            ResetPointsCommand = new RelayCommand(ResetPointsExecute, ResetPointsCanExecute);
+
         }
 
+        private bool ResetPointsCanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void ResetPointsExecute(object obj)
+        {
+            PlayerX.Points = 0;
+            PlayerO.Points = 0;
+        }
+
+        private bool EnterNamePlayerOCanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void EnterNamePlayerOExecute(object obj)
+        {
+            PlayerO.Name = "Ja";
+        }
+
+        private bool EnterNamePlayerXCanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void EnterNamePlayerXExecute(object obj)
+        {
+            PlayerX.Name = "Nein";
+        }
     }
 }
