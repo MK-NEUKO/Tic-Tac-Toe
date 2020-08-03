@@ -22,6 +22,7 @@ namespace TicTacToe.ViewModel
             _executeHandler = execute;
             _canExecuteHandler = canExecute;
         }
+
         public event EventHandler CanExecuteChanged
         {
             add { CommandManager.RequerySuggested += value; }

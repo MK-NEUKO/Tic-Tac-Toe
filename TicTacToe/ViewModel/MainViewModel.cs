@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace TicTacToe.ViewModel
@@ -31,8 +32,8 @@ namespace TicTacToe.ViewModel
 
         public MainViewModel()
         {
-            PlayerX = new GameData { Name = "Hallo X", Points = 12, InAction = true };
-            PlayerO = new GameData { Name = "Hallo O", Points = 4, InAction = false };
+            PlayerX = new GameData { /*Name = "",*/ Points = 12, InAction = true };
+            PlayerO = new GameData { /*Name = "",*/ Points = 4, InAction = false };
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
@@ -53,22 +54,34 @@ namespace TicTacToe.ViewModel
 
         private bool EnterNamePlayerOCanExecute(object obj)
         {
-            return true;
+            if (obj != null)
+            {
+                TextBox textBox = obj as TextBox;
+                return textBox.Text != "";
+            }
+            return false;
         }
 
         private void EnterNamePlayerOExecute(object obj)
         {
-            PlayerO.Name = "Ja";
+            TextBox textBox = obj as TextBox;
+            PlayerO.Name = textBox.Text;
         }
 
         private bool EnterNamePlayerXCanExecute(object obj)
         {
-            return true;
+            if (obj != null)
+            {
+                TextBox textBox = obj as TextBox;
+                return textBox.Text != "";
+            }
+            return false;
         }
 
         private void EnterNamePlayerXExecute(object obj)
         {
-            PlayerX.Name = "Nein";
+            TextBox textBox = obj as TextBox;
+            PlayerX.Name = textBox.Text;
         }
     }
 }
