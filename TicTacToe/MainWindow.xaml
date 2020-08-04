@@ -82,14 +82,24 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points}"/>
-                    <TextBox x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding PlayerO.Points}"/>
+                    <TextBlock x:Name="scoreDisplayX" Grid.Column="0" Text="{Binding PlayerX.Points}" 
+                               TextAlignment="Right" Padding="0,0,15,0" VerticalAlignment="Center"  FontFamily="Eraser" 
+                               FontSize="25" Foreground="White">
+                    </TextBlock>
+                    <TextBlock x:Name="scoreDisplay0" Grid.Column="1" Text="{Binding PlayerO.Points}"
+                               TextAlignment="Left" Padding="15,0,0,0" VerticalAlignment="Center" FontFamily="Eraser" 
+                               FontSize="25" Foreground="White">
+                    </TextBlock>
                 </Grid>
                 <TextBox x:Name="playerOName" Grid.Row="1" Grid.Column="2" Text="{Binding PlayerO.Name}"/>
 
-                <Button Command="{Binding EnterNamePlayerXCommand}" CommandParameter="{Binding ElementName=playerXName}" Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerX" Grid.Row="2" Grid.Column="0" Content="Enter"/>
+                <Button Command="{Binding EnterNamePlayerXCommand}" CommandParameter="{Binding ElementName=playerXName}" Style="{StaticResource buttonDisplay}"
+                        x:Name="enterNamePlayerX" Grid.Row="2" Grid.Column="0" Content="Enter">
+                </Button>
                 <Button Command="{Binding ResetPointsCommand}" Style="{StaticResource buttonDisplay}" x:Name="resetPoints" Grid.Row="2" Grid.Column="1" Content="Reset"/>
-                <Button Command="{Binding EnterNamePlayerOCommand}" CommandParameter="{Binding ElementName=playerOName}" Style="{StaticResource buttonDisplay}" x:Name="enterNamePlayerO" Grid.Row="2" Grid.Column="2" Content="Enter"/>
+                <Button Command="{Binding EnterNamePlayerOCommand}" CommandParameter="{Binding ElementName=playerOName}" Style="{StaticResource buttonDisplay}"
+                        x:Name="enterNamePlayerO" Grid.Row="2" Grid.Column="2" Content="Enter">
+                </Button>
                 <!--#endregion-->
 
             </Grid>

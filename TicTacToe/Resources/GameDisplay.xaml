@@ -55,12 +55,16 @@
     <Style x:Key="labelDisplay" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
-                <ImageBrush ImageSource="..\Images\chalkboardDisplay.png"/>
+                <ImageBrush ImageSource="..\Images\chalkbordDisplay.png"/>
             </Setter.Value>
         </Setter>
     </Style>
     
     <Style TargetType="TextBox">
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="Width" Value="150"/>
+        <Setter Property="MaxLength" Value="8"/>
+        <Setter Property="TextAlignment" Value="Center"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="SelectionBrush" Value="#FF8B1D1D"/>
@@ -68,7 +72,7 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Eraser"/>
-        <Setter Property="FontSize" Value="30"/>
+        <Setter Property="FontSize" Value="25"/>
     </Style>
     
     <!--#endregion-->
