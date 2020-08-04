@@ -7,16 +7,40 @@ namespace TicTacToe.ViewModel
 {
     class RelayCommand : ICommand
     {
-        public event EventHandler CanExecuteChanged;
+        public readonly Action<object> _executeHandler;
+        public readonly Predicate<object> _canExecuteHandler;
 
-        public bool CanExecute(object parameter)
+        public RelayCommand(Action<object> execute) : this(execute, null)
+        { }
+
+        public RelayCommand(Action<object> execute, Predicate<object> canExecute)
         {
-            throw new NotImplementedException();
+            if (execute == null)
+            {
+                throw new ArgumentNullException("Execute kann nicht null sein.");
+            }
+            _executeHandler = execute;
+            _canExecuteHandler = canExecute;
+        }
+
+        public event EventHandler CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public void Execute(object parameter)
         {
-            throw new NotImplementedException();
+            _executeHandler(parameter);
+        }
+
+        public bool CanExecute(object parameter)
+        {
+            if (_canExecuteHandler == null)
+            {
+                return true;
+            }
+            return _canExecuteHandler(parameter);
         }
     }
 }
