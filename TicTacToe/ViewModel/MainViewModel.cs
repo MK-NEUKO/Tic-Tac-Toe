@@ -49,17 +49,9 @@ namespace TicTacToe.ViewModel
         }
 
         private void ChangePlayerExecute(object obj)
-        {
-            if (PlayerX.InAction)
-            {
+        {   
                 PlayerO.InAction = true;
-                PlayerX.InAction = false;
-            }
-            else
-            {
-                PlayerO.InAction = false;
-                PlayerX.InAction = true;
-            }
+                PlayerX.InAction = false;          
         }
 
         private bool ResetPointsCanExecute(object obj)

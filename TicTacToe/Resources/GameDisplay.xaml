@@ -28,7 +28,7 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="DarkSlateGray"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Source={StaticResource vm}, Path=PlayerX.InAction}" Value="true">
+            <DataTrigger Binding="{Binding Source={StaticResource vm}, Path=PlayerX.InAction, Mode=TwoWay}" Value="true">
                 <Setter Property="Foreground" Value="LawnGreen"/>
             </DataTrigger>
         </Style.Triggers>
@@ -41,7 +41,7 @@
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="Foreground" Value="DarkSlateGray"/>
         <Style.Triggers>
-            <DataTrigger Binding="{Binding Source={StaticResource vm}, Path=PlayerO.InAction}" Value="true">
+            <DataTrigger Binding="{Binding Source={StaticResource vm}, Path=PlayerO.InAction, Mode=TwoWay}" Value="true">
                 <Setter Property="Foreground" Value="LawnGreen"/>
             </DataTrigger>
         </Style.Triggers>
