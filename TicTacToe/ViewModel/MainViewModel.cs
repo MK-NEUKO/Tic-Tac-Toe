@@ -8,20 +8,20 @@ namespace TicTacToe.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
-        private GameData _playerX;
+        private PlayerData _playerX;
 
-        public GameData PlayerX
+        public PlayerData PlayerX
         {
             get { return _playerX; }
-            set { _playerX = value; }
+            set { SetProperty<PlayerData>(ref _playerX, value); }
         }
 
-        private GameData _playerO;
+        private PlayerData _playerO;
 
-        public GameData PlayerO
+        public PlayerData PlayerO
         {
             get { return _playerO; }
-            set { _playerO = value; }
+            set { SetProperty<PlayerData>(ref _playerO, value); }
         }
 
         public ICommand EnterNamePlayerXCommand { get; set; }
@@ -33,8 +33,8 @@ namespace TicTacToe.ViewModel
 
         public MainViewModel()
         {
-            PlayerX = new GameData { /*Name = "",*/ Points = 12, InAction = true };
-            PlayerO = new GameData { /*Name = "",*/ Points = 4, InAction = false };
+            PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
+            PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
@@ -49,9 +49,17 @@ namespace TicTacToe.ViewModel
         }
 
         private void ChangePlayerExecute(object obj)
-        {   
+        {
+            if (PlayerX.InAction)
+            {
                 PlayerO.InAction = true;
-                PlayerX.InAction = false;          
+                PlayerX.InAction = false;
+            }          
+            else
+            {
+                PlayerX.InAction = true;
+                PlayerO.InAction = false;
+            }
         }
 
         private bool ResetPointsCanExecute(object obj)
