@@ -35,17 +35,17 @@
             </Grid.RowDefinitions>
 
             <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="X"/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="0" Foreground="White" Content=" "/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="0" Foreground="White"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="0" Foreground="LawnGreen"  Content="{Binding GameBoard[0]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="0" Foreground="White" Content="{Binding GameBoard[1]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="0" Foreground="White" Content="{Binding GameBoard[2]}"/>
 
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="1" Foreground="White"  Content="O"/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="X"/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="1" Foreground="White"  Content="X"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="1" Foreground="White"  Content="{Binding GameBoard[3]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="1" Foreground="LawnGreen"  Content="{Binding GameBoard[4]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="1" Foreground="White"  Content="{Binding GameBoard[5]}"/>
 
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="2" Foreground="White"  Content="O"/>
-            <Button Style="{StaticResource buttonGameBoard}" Command="{Binding ChangePlayer}" Grid.Column="1" Grid.Row="2" Foreground="White"  Content="c"/>
-            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="X"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="2" Foreground="White"  Content="{Binding GameBoard[6]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Command="{Binding ChangePlayer}" Grid.Column="1" Grid.Row="2" Foreground="White"  Content="{Binding GameBoard[7]}"/>
+            <Button Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="2" Foreground="LawnGreen"  Content="{Binding GameBoard[8]}"/>
             <!--#endregion-->
 
 

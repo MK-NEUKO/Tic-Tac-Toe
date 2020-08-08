@@ -25,13 +25,14 @@ namespace TicTacToe.ViewModel
             set { _playerO = value; }
         }
 
-        private GameData _gameBoard;
+        private string[] _gameBoard;
 
-        public GameData GameBoard
+        public string[] GameBoard
         {
             get { return _gameBoard; }
             set { _gameBoard = value; }
         }
+
 
 
         public ICommand EnterNamePlayerXCommand { get; set; }
@@ -45,6 +46,8 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
+            GameBoard = new string[9] { "X", "X", "O", "O", "X", "X", "X", "O", "O" };
+            
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
