@@ -6,21 +6,24 @@
         xmlns:local="clr-namespace:TicTacToe.ViewModel"
         mc:Ignorable="d"
         Title="MK-NEUKO    Tic Tac Toe" Height="606" Width="506">
-
+    
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources\GameBoard.xaml" />
                 <ResourceDictionary Source="Resources\GameDisplay.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <local:MainViewModel x:Key="vm"/>
         </ResourceDictionary>
     </Window.Resources>
 
     <Border BorderBrush="Silver" BorderThickness="3">
 
         <!--#region Game Board-->
-        <Grid DataContext="{StaticResource vm}" x:Name="gameBoard">
+        <Grid x:Name="gameBoard">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>

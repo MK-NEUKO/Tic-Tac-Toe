@@ -38,7 +38,7 @@ namespace TicTacToe.ViewModel
         public ICommand EnterNamePlayerXCommand { get; set; }
         public ICommand EnterNamePlayerOCommand { get; set; }
         public ICommand ResetPointsCommand { get; set; }
-        //public ICommand ChangePlayer { get; set; }
+        public ICommand ChangePlayer { get; set; }
 
 
 
@@ -52,29 +52,29 @@ namespace TicTacToe.ViewModel
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
             ResetPointsCommand = new RelayCommand(ResetPointsExecute, ResetPointsCanExecute);
-            //ChangePlayer = new RelayCommand(ChangePlayerExecute, ChangePlayerCanExecute);
+            ChangePlayer = new RelayCommand(ChangePlayerExecute, ChangePlayerCanExecute);
 
         }
 
 
-        //private bool ChangePlayerCanExecute(object obj)
-        //{
-        //    return true;
-        //}
+        private bool ChangePlayerCanExecute(object obj)
+        {
+            return true;
+        }
 
-        //private void ChangePlayerExecute(object obj)
-        //{
-        //    if (PlayerX.InAction)
-        //    {
-        //        PlayerO.InAction = true;
-        //        PlayerX.InAction = false;
-        //    }          
-        //    else
-        //    {
-        //        PlayerX.InAction = true;
-        //        PlayerO.InAction = false;
-        //    }
-        //}
+        private void ChangePlayerExecute(object obj)
+        {
+            if (PlayerX.InAction)
+            {
+                PlayerO.InAction = true;
+                PlayerX.InAction = false;
+            }
+            else
+            {
+                PlayerX.InAction = true;
+                PlayerO.InAction = false;
+            }
+        }
 
         private bool ResetPointsCanExecute(object obj)
         {
@@ -85,8 +85,6 @@ namespace TicTacToe.ViewModel
         {
             PlayerX.Points = 0;
             PlayerO.Points = 0;
-            PlayerO.InAction = true;
-            PlayerX.InAction = true;
         }
 
         private bool EnterNamePlayerOCanExecute(object obj)
