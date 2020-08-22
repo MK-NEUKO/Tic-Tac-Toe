@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--#region Game Board Background-->
-    
+
     <Style x:Key="labelChalkboard" TargetType="{x:Type Label}">
         <Setter Property="Background">
             <Setter.Value>
@@ -10,22 +10,27 @@
             </Setter.Value>
         </Setter>
     </Style>
-    
+
     <!--#endregion -->
 
     <!--#region Game Board Buttons-->
 
     <Style x:Key="buttonGameBoard" TargetType="Button">
+        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="FontFamily" Value="Eraser"/>
-        <Setter Property="FontSize" Value="50"/>
+        <Setter Property="FontSize" Value="150"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Background="{TemplateBinding Background}">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                          VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                          Content="{TemplateBinding Content}"/>
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -40,7 +45,7 @@
             </Trigger>
         </Style.Triggers>
     </Style>
-    
+
     <!--#endregion-->
 
 

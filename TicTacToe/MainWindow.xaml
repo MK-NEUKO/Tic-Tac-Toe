@@ -38,17 +38,17 @@
             </Grid.RowDefinitions>
 
             <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-            <Button x:Name="boardArea0" Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="0" Content="{Binding GameBoard[0]}"/>
-            <Button x:Name="boardArea1" Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="0" Content="{Binding GameBoard[1]}"/>
-            <Button x:Name="boardArea2" Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="0" Content="{Binding GameBoard[2]}"/>
-                    
-            <Button x:Name="boardArea3" Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="1" Content="{Binding GameBoard[3]}"/>
-            <Button x:Name="boardArea4" Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="1" Content="{Binding GameBoard[4]}"/>
-            <Button x:Name="boardArea5" Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="1" Content="{Binding GameBoard[5]}"/>
-                   
-            <Button x:Name="boardArea6" Style="{StaticResource buttonGameBoard}" Grid.Column="0" Grid.Row="2" Content="{Binding GameBoard[6]}"/>
-            <Button x:Name="boardArea7" Style="{StaticResource buttonGameBoard}" Grid.Column="1" Grid.Row="2" Content="{Binding GameBoard[7]}"/>
-            <Button x:Name="boardArea8" Style="{StaticResource buttonGameBoard}" Grid.Column="2" Grid.Row="2" Content="{Binding GameBoard[8]}"/>
+            <Button x:Name="boardArea0" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea0}" Grid.Column="0" Grid.Row="0" Content="{Binding GameBoard[0]}"/>
+            <Button x:Name="boardArea1" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea1}" Grid.Column="1" Grid.Row="0" Content="{Binding GameBoard[1]}"/>
+            <Button x:Name="boardArea2" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea2}" Grid.Column="2" Grid.Row="0" Content="{Binding GameBoard[2]}"/>
+                                                                                
+            <Button x:Name="boardArea3" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea3}" Grid.Column="0" Grid.Row="1" Content="{Binding GameBoard[3]}"/>
+            <Button x:Name="boardArea4" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea4}" Grid.Column="1" Grid.Row="1" Content="{Binding GameBoard[4]}"/>
+            <Button x:Name="boardArea5" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea5}" Grid.Column="2" Grid.Row="1" Content="{Binding GameBoard[5]}"/>
+                                                                                  
+            <Button x:Name="boardArea6" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea6}" Grid.Column="0" Grid.Row="2" Content="{Binding GameBoard[6]}"/>
+            <Button x:Name="boardArea7" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea7}" Grid.Column="1" Grid.Row="2" Content="{Binding GameBoard[7]}"/>
+            <Button x:Name="boardArea8" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea8}" Grid.Column="2" Grid.Row="2" Content="{Binding GameBoard[8]}"/>
             <!--#endregion-->
 
 
