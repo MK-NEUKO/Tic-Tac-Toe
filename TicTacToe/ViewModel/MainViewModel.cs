@@ -39,6 +39,7 @@ namespace TicTacToe.ViewModel
         public ICommand EnterNamePlayerOCommand { get; set; }
         public ICommand ResetPointsCommand { get; set; }
         public ICommand ChangePlayer { get; set; }
+        public ICommand PlaceATileCommand { get; set; }
 
 
 
@@ -52,7 +53,26 @@ namespace TicTacToe.ViewModel
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
             ResetPointsCommand = new RelayCommand(ResetPointsExecute, ResetPointsCanExecute);
+            PlaceATileCommand = new RelayCommand(PlaceATileExecute, PlaceATileCanExecute);
             ChangePlayer = new RelayCommand(ChangePlayerExecute, ChangePlayerCanExecute);
+
+        }
+
+        private bool PlaceATileCanExecute(object obj)
+        {
+            return true;
+        }
+
+        private void PlaceATileExecute(object obj)
+        {
+            if (obj is Button gameBoardTile)
+            {
+                gameBoardTile.Content = "OK";
+            }
+        }
+
+        private void PlayGame()
+        {
 
         }
 
