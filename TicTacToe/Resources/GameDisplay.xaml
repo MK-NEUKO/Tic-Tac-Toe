@@ -1,9 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
-                    xmlns:local="clr-namespace:TicTacToe.ViewModel">
-    
-    
+                    xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase">
+
+
+
     <!--#region Display Header -->
     
     <Style x:Key="labelDisplayHeader" TargetType="{x:Type Label}">

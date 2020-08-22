@@ -1,6 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:TicTacToe.Resources">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <!--#region Game Board Background-->
     
@@ -12,11 +11,12 @@
         </Setter>
     </Style>
     
-    <!--#region -->
+    <!--#endregion -->
 
     <!--#region Game Board Buttons-->
 
     <Style x:Key="buttonGameBoard" TargetType="Button">
+        <Setter Property="Foreground" Value="White"/>
         <Setter Property="Background" Value="{x:Null}"/>
         <Setter Property="BorderBrush" Value="{x:Null}"/>
         <Setter Property="FontFamily" Value="Eraser"/>
