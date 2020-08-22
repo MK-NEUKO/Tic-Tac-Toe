@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Printing;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -38,7 +39,6 @@ namespace TicTacToe.ViewModel
         public ICommand EnterNamePlayerXCommand { get; set; }
         public ICommand EnterNamePlayerOCommand { get; set; }
         public ICommand ResetPointsCommand { get; set; }
-        public ICommand ChangePlayer { get; set; }
         public ICommand PlaceASigneCommand { get; set; }
 
 
@@ -47,20 +47,22 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
-            GameBoard = new string[9] { "X", "X", "O", "O", "X", "X", "X", "O", "O" };
-            
+            GameBoard = new string[9] /*{ "X", "X", "X", "X", "X", "X", "X", "X", "X" }*/;
+
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
             ResetPointsCommand = new RelayCommand(ResetPointsExecute, ResetPointsCanExecute);
             PlaceASigneCommand = new RelayCommand(PlaceASigneExecute, PlaceASigneCanExecute);
-            ChangePlayer = new RelayCommand(ChangePlayerExecute, ChangePlayerCanExecute);
-
         }
 
         private bool PlaceASigneCanExecute(object obj)
         {
-            return true;
+            if (obj is Button)
+                return true;
+            else
+                // Fehlermeldung
+                return false;
         }
 
         private void PlaceASigneExecute(object obj)
@@ -69,7 +71,16 @@ namespace TicTacToe.ViewModel
             {
                 if (PlayerX.InAction)
                 {
-                    value.Content = "X";
+                    GameBoard[0] = "X";
+                    //value.Content = "X";
+                    PlayerO.InAction = true;
+                    PlayerX.InAction = false;
+                }
+                else
+                {
+                    value.Content = "O";
+                    PlayerO.InAction = false;
+                    PlayerX.InAction = true;
                 }
             }
         }
@@ -80,25 +91,6 @@ namespace TicTacToe.ViewModel
         }
 
 
-        private bool ChangePlayerCanExecute(object obj)
-        {
-            return true;
-        }
-
-        private void ChangePlayerExecute(object obj)
-        {
-            if (PlayerX.InAction)
-            {
-                PlayerO.InAction = true;
-                PlayerX.InAction = false;
-            }
-            else
-            {
-                PlayerX.InAction = true;
-                PlayerO.InAction = false;
-            }
-        }
-
         private bool ResetPointsCanExecute(object obj)
         {
             return true;
@@ -108,6 +100,7 @@ namespace TicTacToe.ViewModel
         {
             PlayerX.Points = 0;
             PlayerO.Points = 0;
+            Array.Clear(GameBoard, 0, 9);
         }
 
         private bool EnterNamePlayerOCanExecute(object obj)
