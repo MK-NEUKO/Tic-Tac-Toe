@@ -48,9 +48,6 @@ namespace TicTacToe.ViewModel
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
             GameBoard = new GameData();
-            GameBoard.Array = new string[9];
-            GameBoard.Array[1] = "X";
-
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
@@ -73,8 +70,7 @@ namespace TicTacToe.ViewModel
             {
                 if (PlayerX.InAction)
                 {
-                    GameBoard.Array[0] = "X";
-                    //value.Content = "X";
+                    value.Content = "X";
                     PlayerO.InAction = true;
                     PlayerX.InAction = false;
                 }
@@ -102,7 +98,7 @@ namespace TicTacToe.ViewModel
         {
             PlayerX.Points = 0;
             PlayerO.Points = 0;
-            Array.Clear(GameBoard.Array, 0, 9);
+            GameBoard = null;
         }
 
         private bool EnterNamePlayerOCanExecute(object obj)
