@@ -7,12 +7,12 @@ namespace TicTacToe.Model
 {
     class GameData : ViewModelBase
     {
-        private string[] _gameBoard;
+        private string[] _array;
 
-        public string[] GameBoard
+        public string[] Array
         {
-            get { return _gameBoard; }
-            set { SetProperty<string[]>(ref _gameBoard, value); }
+            get { return _array; }
+            set { SetProperty<string[]>(ref _array, value); }
         }
 
     }

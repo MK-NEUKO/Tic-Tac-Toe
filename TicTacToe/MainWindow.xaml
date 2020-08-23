@@ -38,17 +38,17 @@
             </Grid.RowDefinitions>
 
             <Label Style="{StaticResource labelChalkboard}" Grid.ColumnSpan="3" Grid.RowSpan="3"/>
-            <Button x:Name="boardArea0" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea0}" Grid.Column="0" Grid.Row="0" Content="{Binding GameBoard[0], Mode=TwoWay}"/>
-            <Button x:Name="boardArea1" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea1}" Grid.Column="1" Grid.Row="0" Content="{Binding GameBoard[1], Mode=TwoWay}"/>
-            <Button x:Name="boardArea2" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea2}" Grid.Column="2" Grid.Row="0" Content="{Binding GameBoard[2], Mode=TwoWay}"/>
+            <Button x:Name="boardArea0" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea0}" Grid.Column="0" Grid.Row="0" Content="{Binding GameBoard.Array[0]}"/>
+            <Button x:Name="boardArea1" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea1}" Grid.Column="1" Grid.Row="0" Content="{Binding GameBoard.Array[1]}"/>
+            <Button x:Name="boardArea2" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea2}" Grid.Column="2" Grid.Row="0" Content="{Binding GameBoard.Array[2], Mode=TwoWay}"/>
                                                                                                                                                                                                
-            <Button x:Name="boardArea3" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea3}" Grid.Column="0" Grid.Row="1" Content="{Binding GameBoard[3], Mode=TwoWay}"/>
-            <Button x:Name="boardArea4" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea4}" Grid.Column="1" Grid.Row="1" Content="{Binding GameBoard[4], Mode=TwoWay}"/>
-            <Button x:Name="boardArea5" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea5}" Grid.Column="2" Grid.Row="1" Content="{Binding GameBoard[5], Mode=TwoWay}"/>
-                                                                                                                                                                                                 
-            <Button x:Name="boardArea6" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea6}" Grid.Column="0" Grid.Row="2" Content="{Binding GameBoard[6], Mode=TwoWay}"/>
-            <Button x:Name="boardArea7" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea7}" Grid.Column="1" Grid.Row="2" Content="{Binding GameBoard[7], Mode=TwoWay}"/>
-            <Button x:Name="boardArea8" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea8}" Grid.Column="2" Grid.Row="2" Content="{Binding GameBoard[8], Mode=TwoWay}"/>
+            <Button x:Name="boardArea3" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea3}" Grid.Column="0" Grid.Row="1" Content="{Binding GameBoard.Array[3], Mode=TwoWay}"/>
+            <Button x:Name="boardArea4" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea4}" Grid.Column="1" Grid.Row="1" Content="{Binding GameBoard.Array[4], Mode=TwoWay}"/>
+            <Button x:Name="boardArea5" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea5}" Grid.Column="2" Grid.Row="1" Content="{Binding GameBoard.Array[5], Mode=TwoWay}"/>
+                                                                                                                                                                                              
+            <Button x:Name="boardArea6" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea6}" Grid.Column="0" Grid.Row="2" Content="{Binding GameBoard.Array[6], Mode=TwoWay}"/>
+            <Button x:Name="boardArea7" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea7}" Grid.Column="1" Grid.Row="2" Content="{Binding GameBoard.Array[7], Mode=TwoWay}"/>
+            <Button x:Name="boardArea8" Style="{StaticResource buttonGameBoard}" CommandParameter="{Binding ElementName=boardArea8}" Grid.Column="2" Grid.Row="2" Content="{Binding GameBoard.Array[8], Mode=TwoWay}"/>
             <!--#endregion-->
 
 
