@@ -26,13 +26,15 @@ namespace TicTacToe.ViewModel
             set { _playerO = value; }
         }
 
-        private GameData _gameBoard;
-
-        public GameData GameBoard
-        {
-            get { return _gameBoard; }
-            set { _gameBoard = value; }
-        }
+        public GameData BoardArea0 { get; set; }
+        public GameData BoardArea1 { get; set; }
+        public GameData BoardArea2 { get; set; }
+        public GameData BoardArea3 { get; set; }
+        public GameData BoardArea4 { get; set; }
+        public GameData BoardArea5 { get; set; }
+        public GameData BoardArea6 { get; set; }
+        public GameData BoardArea7 { get; set; }
+        public GameData BoardArea8 { get; set; }
 
 
 
@@ -47,7 +49,20 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
-            GameBoard = new GameData();
+            BoardArea0 = new GameData();
+            BoardArea1 = new GameData();
+            BoardArea2 = new GameData();
+            BoardArea3 = new GameData();
+            BoardArea4 = new GameData();
+            BoardArea5 = new GameData();
+            BoardArea6 = new GameData();
+            BoardArea7 = new GameData();
+            BoardArea8 = new GameData();
+            List<GameData> BoardAreaList = new List<GameData>();
+
+           
+            
+
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
@@ -55,6 +70,7 @@ namespace TicTacToe.ViewModel
             PlaceASigneCommand = new RelayCommand(PlaceASigneExecute, PlaceASigneCanExecute);
         }
 
+        
         private bool PlaceASigneCanExecute(object obj)
         {
             if (obj is Button)
@@ -70,20 +86,21 @@ namespace TicTacToe.ViewModel
             {
                 if (PlayerX.InAction)
                 {
-                    value.Content = "X";
+                    BoardAreaList.cont
+
                     PlayerO.InAction = true;
                     PlayerX.InAction = false;
                 }
                 else
                 {
-                    value.Content = "O";
+                    
                     PlayerO.InAction = false;
                     PlayerX.InAction = true;
                 }
             }
         }
 
-        private void PlayGame()
+        private void PlaceASigne(string Name)
         {
 
         }
@@ -98,7 +115,6 @@ namespace TicTacToe.ViewModel
         {
             PlayerX.Points = 0;
             PlayerO.Points = 0;
-            GameBoard = null;
         }
 
         private bool EnterNamePlayerOCanExecute(object obj)
