@@ -26,15 +26,9 @@ namespace TicTacToe.ViewModel
             set { _playerO = value; }
         }
 
-        public GameData BoardArea0 { get; set; }
-        public GameData BoardArea1 { get; set; }
-        public GameData BoardArea2 { get; set; }
-        public GameData BoardArea3 { get; set; }
-        public GameData BoardArea4 { get; set; }
-        public GameData BoardArea5 { get; set; }
-        public GameData BoardArea6 { get; set; }
-        public GameData BoardArea7 { get; set; }
-        public GameData BoardArea8 { get; set; }
+        public GameBoard Board { get; set; }
+
+
 
 
 
@@ -49,19 +43,7 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
-            BoardArea0 = new GameData();
-            BoardArea1 = new GameData();
-            BoardArea2 = new GameData();
-            BoardArea3 = new GameData();
-            BoardArea4 = new GameData();
-            BoardArea5 = new GameData();
-            BoardArea6 = new GameData();
-            BoardArea7 = new GameData();
-            BoardArea8 = new GameData();
-            List<GameData> BoardAreaList = new List<GameData>();
-
-           
-            
+            Board = new GameBoard();
 
 
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
@@ -86,24 +68,55 @@ namespace TicTacToe.ViewModel
             {
                 if (PlayerX.InAction)
                 {
-                    BoardAreaList.cont
-
+                    Board.PlaceASigne(value.Name, "X");
                     PlayerO.InAction = true;
                     PlayerX.InAction = false;
                 }
                 else
                 {
-                    
+                    Board.PlaceASigne(value.Name, "O");
                     PlayerO.InAction = false;
                     PlayerX.InAction = true;
                 }
             }
         }
 
-        private void PlaceASigne(string Name)
+        public class GameBoard
         {
+            public GameData BoardArea0 { get; set; }
+            public GameData BoardArea1 { get; set; }
+            public GameData BoardArea2 { get; set; }
+            public GameData BoardArea3 { get; set; }
+            public GameData BoardArea4 { get; set; }
+            public GameData BoardArea5 { get; set; }
+            public GameData BoardArea6 { get; set; }
+            public GameData BoardArea7 { get; set; }
+            public GameData BoardArea8 { get; set; }
+
+
+            public GameBoard()
+            {
+                BoardArea0 = new GameData();
+                BoardArea1 = new GameData();
+                BoardArea2 = new GameData();
+                BoardArea3 = new GameData();
+                BoardArea4 = new GameData();
+                BoardArea5 = new GameData();
+                BoardArea6 = new GameData();
+                BoardArea7 = new GameData();
+                BoardArea8 = new GameData();
+            }
+
+
+            public void PlaceASigne(string name, string signe)
+            {
+                BoardArea0.Signe = signe;
+            }   
 
         }
+
+
+        
 
 
         private bool ResetPointsCanExecute(object obj)
