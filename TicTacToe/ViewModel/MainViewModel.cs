@@ -10,26 +10,9 @@ namespace TicTacToe.ViewModel
 {
     class MainViewModel : ViewModelBase
     {
-        private PlayerData _playerX;
-
-        public PlayerData PlayerX
-        {
-            get { return _playerX; }
-            set { _playerX = value; }
-        }
-
-        private PlayerData _playerO;
-
-        public PlayerData PlayerO
-        {
-            get { return _playerO; }
-            set { _playerO = value; }
-        }
-
+        public PlayerData PlayerX { get; set; }
+        public PlayerData PlayerO { get; set; }
         public GameBoard Board { get; set; }
-
-
-
 
 
         public ICommand EnterNamePlayerXCommand { get; set; }
@@ -44,15 +27,14 @@ namespace TicTacToe.ViewModel
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
             Board = new GameBoard();
-
-
+           
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
             ResetPointsCommand = new RelayCommand(ResetPointsExecute, ResetPointsCanExecute);
             PlaceASigneCommand = new RelayCommand(PlaceASigneExecute, PlaceASigneCanExecute);
         }
 
-        
+
         private bool PlaceASigneCanExecute(object obj)
         {
             if (obj is Button)
@@ -64,7 +46,7 @@ namespace TicTacToe.ViewModel
 
         private void PlaceASigneExecute(object obj)
         {
-            if(obj is Button value)
+            if (obj is Button value)
             {
                 if (PlayerX.InAction)
                 {
@@ -93,6 +75,8 @@ namespace TicTacToe.ViewModel
             public GameData BoardArea7 { get; set; }
             public GameData BoardArea8 { get; set; }
 
+            List<GameData> BoardAreaList = new List<GameData>();
+
 
             public GameBoard()
             {
@@ -105,18 +89,30 @@ namespace TicTacToe.ViewModel
                 BoardArea6 = new GameData();
                 BoardArea7 = new GameData();
                 BoardArea8 = new GameData();
+
+                BoardAreaList.Add(BoardArea0);
+                BoardAreaList.Add(BoardArea1);
+                BoardAreaList.Add(BoardArea2);
+                BoardAreaList.Add(BoardArea3);
+                BoardAreaList.Add(BoardArea4);
+                BoardAreaList.Add(BoardArea5);
+                BoardAreaList.Add(BoardArea6);
+                BoardAreaList.Add(BoardArea7);
+                BoardAreaList.Add(BoardArea8);
             }
 
 
             public void PlaceASigne(string name, string signe)
             {
-                BoardArea0.Signe = signe;
-            }   
+                double index = Char.GetNumericValue(name, 9);
+                int i = (int)index;
+                BoardAreaList[i].Signe = signe; 
+            }
 
         }
 
 
-        
+
 
 
         private bool ResetPointsCanExecute(object obj)
