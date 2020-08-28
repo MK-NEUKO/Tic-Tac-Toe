@@ -22,14 +22,5 @@ namespace TicTacToe.Model
             get { return _isWinner; }
             set { SetProperty(ref _isWinner, value); }
         }
-
-        private string _iD;
-
-        public string ID
-        {
-            get { return _iD; }
-            set { SetProperty(ref _iD, value); }
-        }
-
     }
 }

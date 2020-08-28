@@ -104,9 +104,34 @@ namespace TicTacToe.ViewModel
 
             public void PlaceASigne(string name, string signe)
             {
-                double index = Char.GetNumericValue(name, 9);
-                int i = (int)index;
-                BoardAreaList[i].Signe = signe; 
+                // The "name" parameter contains the name of the button that was pressed.
+                // The string was passed as a CommandParameter.
+                // The last character of the string is used to access the correct list element.
+                double i = Char.GetNumericValue(name, 9);
+                int index = (int)i;
+                BoardAreaList[index].Signe = signe; 
+            }
+
+            public void ClearUpGameBoard()
+            {
+                foreach (GameData BoardArea in BoardAreaList)
+                {
+                    BoardArea.Signe = null;
+                    BoardArea.IsWinner = false;
+                }
+            }
+
+            public void CheckForWinner()
+            {
+
+            }
+
+            public void MakeItGreen()
+            {
+                foreach (GameData BoardArea in BoardAreaList)
+                {
+                    BoardArea.IsWinner = true;
+                }
             }
 
         }
@@ -122,6 +147,8 @@ namespace TicTacToe.ViewModel
 
         private void ResetPointsExecute(object obj)
         {
+            //Board.ClearUpGameBoard();
+            Board.MakeItGreen();
             PlayerX.Points = 0;
             PlayerO.Points = 0;
         }

@@ -45,6 +45,9 @@
             <Trigger Property="HasContent" Value="True">
                 <Setter Property="IsEnabled" Value="False"/>
             </Trigger>
+            <DataTrigger Binding="{Binding Board.BoardArea0.IsWinner}" Value="true">
+                <Setter Property="Foreground" Value="LawnGreen"/>
+            </DataTrigger>
         </Style.Triggers>
     </Style>
 
