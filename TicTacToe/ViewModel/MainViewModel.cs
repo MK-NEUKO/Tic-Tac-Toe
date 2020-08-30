@@ -160,24 +160,23 @@ namespace TicTacToe.ViewModel
                 List<GameData> winnerX = BoardAreaList.FindAll(WinnerX);
                 if (winnerX.Count >= 3)
                 {
-                    // serge for one of the nine winnerconstelations WinnerOne - WinnerNine
+                    List<GameData> winnerOne = winnerX.FindAll(WinnerOne);
+                    if (winnerOne.Count == 3)
+                        MakeItGreen(winnerOne);
 
-                    //List < GameData > winnerOne = resultX.FindAll(WinnerOne);
-                    // if (winnerOne.Count == 3)
-                    //     return winnerOne;
-
-                    // List<GameData> winnerTwo = resultX.FindAll(WinnerTwo);
-                    // if (winnerOne.Count == 3)
-                    //     return winnerTwo;
-
-                    // else
-                    //     return null;
-                    foreach (GameData item in winnerX)
-                    {
-                        item.IsWinner = true;
-                    }
+                    List<GameData> winnerTwo = winnerX.FindAll(WinnerTwo);
+                    if (winnerTwo.Count == 3)
+                        MakeItGreen(winnerTwo);
                 }
                
+            }
+
+            private void MakeItGreen(List<GameData> winner)
+            {
+                foreach (GameData item in winner)
+                {
+                    item.IsWinner = true;
+                }
             }
 
             private bool WinnerX(GameData area)
@@ -196,6 +195,14 @@ namespace TicTacToe.ViewModel
                     return false;
             }
 
+            private bool WinnerTwo(GameData area)
+            {
+                if (area.IDArea == 3 || area.IDArea == 4 || area.IDArea == 5)
+                    return true;
+                else
+                    return false;
+            }
+
             public void PlaceASigne(string name, string signe)
             {
                 double index = Char.GetNumericValue(name, 9);
@@ -206,7 +213,11 @@ namespace TicTacToe.ViewModel
 
             public void ClearGameBoard()
             {
-                BoardAreaList.Clear();
+                foreach (GameData item in BoardAreaList)
+                {
+                    item.Signe = null;
+                    item.IsWinner = false;
+                }
             }
         }
 
