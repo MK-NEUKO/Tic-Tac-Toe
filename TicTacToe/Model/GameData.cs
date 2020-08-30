@@ -23,12 +23,12 @@ namespace TicTacToe.Model
             set { SetProperty(ref _isWinner, value); }
         }
 
-        private string _iD;
+        private int _iDArea;
 
-        public string ID
+        public int IDArea
         {
-            get { return _iD; }
-            set { SetProperty(ref _iD, value); }
+            get { return _iDArea; }
+            set { SetProperty(ref _iDArea, value); }
         }
 
     }
