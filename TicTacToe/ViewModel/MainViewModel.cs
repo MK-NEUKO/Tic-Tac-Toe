@@ -31,14 +31,12 @@ namespace TicTacToe.ViewModel
             PlaceASigneCommand = new RelayCommand(PlaceASigneExecute, PlaceASigneCanExecute);
         }
 
-        private void PlayTicTacToe(string name, string signe)
+        private void PlayTicTacToe(string buttonName, string signe)
         {
-            bool winnerX = false;
-            bool winnerO = false;
-            
-            Board.PlaceASigne(name, signe);
-            winnerX = Board.CheckForWinnerX();
-            winnerO = Board.CheckForWinnerO();
+           
+            Board.PlaceASigne(buttonName, signe);
+            bool winnerX = Board.CheckForWinnerX();
+            bool winnerO = Board.CheckForWinnerO();
             if (winnerX)
                 PlayerX.Points++;
             if (winnerO)
