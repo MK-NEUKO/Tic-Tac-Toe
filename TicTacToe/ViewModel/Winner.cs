@@ -18,30 +18,21 @@ namespace TicTacToe.ViewModel
             public GameData BoardArea7 { get; set; }
             public GameData BoardArea8 { get; set; }
 
-            List<GameData> BoardAreaList = new List<GameData>();
+            private List<GameData> BoardAreaList;
 
 
             public Winner()
             {
-                BoardArea0 = new GameData();
-                BoardArea1 = new GameData();
-                BoardArea2 = new GameData();
-                BoardArea3 = new GameData();
-                BoardArea4 = new GameData();
-                BoardArea5 = new GameData();
-                BoardArea6 = new GameData();
-                BoardArea7 = new GameData();
-                BoardArea8 = new GameData();
-
-                BoardAreaList.Add(BoardArea0);
-                BoardAreaList.Add(BoardArea1);
-                BoardAreaList.Add(BoardArea2);
-                BoardAreaList.Add(BoardArea3);
-                BoardAreaList.Add(BoardArea4);
-                BoardAreaList.Add(BoardArea5);
-                BoardAreaList.Add(BoardArea6);
-                BoardAreaList.Add(BoardArea7);
-                BoardAreaList.Add(BoardArea8);
+                BoardAreaList = new List<GameData>();  
+                BoardAreaList.Add(BoardArea0 = new GameData());
+                BoardAreaList.Add(BoardArea1 = new GameData());
+                BoardAreaList.Add(BoardArea2 = new GameData());
+                BoardAreaList.Add(BoardArea3 = new GameData());
+                BoardAreaList.Add(BoardArea4 = new GameData());
+                BoardAreaList.Add(BoardArea5 = new GameData());
+                BoardAreaList.Add(BoardArea6 = new GameData());
+                BoardAreaList.Add(BoardArea7 = new GameData());
+                BoardAreaList.Add(BoardArea8 = new GameData());
             }
 
             public bool CheckForWinnerX()
@@ -261,12 +252,10 @@ namespace TicTacToe.ViewModel
             }
 
 
-            public void PlaceASigne(string name, string signe)
-            {
-                double index = Char.GetNumericValue(name, 9);
-                int i = (int)index;
-                BoardAreaList[i].Signe = signe;
-                BoardAreaList[i].IDArea = i;
+            public void PlaceASigne(int index, string signe)
+            {               
+                BoardAreaList[index].Signe = signe;
+                BoardAreaList[index].IDArea = index;
             }
 
             public void ClearGameBoard()
