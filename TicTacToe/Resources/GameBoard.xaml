@@ -16,7 +16,7 @@
     <!--#region Game Board Buttons-->
 
     <Style x:Key="boardArea0" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea0Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -52,7 +52,7 @@
     </Style>
 
     <Style x:Key="boardArea1" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea1Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -88,7 +88,7 @@
     </Style>
 
     <Style x:Key="boardArea2" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea2Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -124,7 +124,7 @@
     </Style>
 
     <Style x:Key="boardArea3" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea3Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -160,7 +160,7 @@
     </Style>
 
     <Style x:Key="boardArea4" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea4Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -196,7 +196,7 @@
     </Style>
 
     <Style x:Key="boardArea5" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea5Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -232,7 +232,7 @@
     </Style>
 
     <Style x:Key="boardArea6" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea6Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -268,7 +268,7 @@
     </Style>
 
     <Style x:Key="boardArea7" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea7Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
@@ -304,7 +304,7 @@
     </Style>
 
     <Style x:Key="boardArea8" TargetType="Button">
-        <Setter Property="Command" Value="{Binding PlaceASigneCommand}"/>
+        <Setter Property="Command" Value="{Binding BoardArea8Command}"/>
         <Setter Property="Foreground" Value="White"/>
         <Setter Property="FontFamily" Value="ERASER"/>
         <Setter Property="FontSize" Value="150"/>
