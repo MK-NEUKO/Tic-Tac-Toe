@@ -3,6 +3,7 @@ using System.Printing;
 using System.Text;
 using System.Windows.Controls;
 using System.Windows.Input;
+using TicTacToe.Model;
 
 namespace TicTacToe.ViewModel
 {
@@ -11,6 +12,8 @@ namespace TicTacToe.ViewModel
         public PlayerData PlayerX { get; set; }
         public PlayerData PlayerO { get; set; }
         public GameBoard Board { get; set; }
+        public Player Player { get; set; }
+
 
 
         public ICommand EnterNamePlayerXCommand { get; set; }
@@ -32,6 +35,7 @@ namespace TicTacToe.ViewModel
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
             Board = new GameBoard();
+            Player = new Player()
            
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
@@ -218,8 +222,7 @@ namespace TicTacToe.ViewModel
                 bool winnerX = Board.CheckForWinnerX();
                 if (winnerX)
                     PlayerX.Points++;
-                PlayerX.InAction = false;
-                PlayerO.InAction = true;
+                
             }
             else if (PlayerO.InAction)
             {

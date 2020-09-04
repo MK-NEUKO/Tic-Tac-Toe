@@ -7,40 +7,31 @@ namespace TicTacToe.ViewModel
 {
     class GameBoard
     {
-        public GameData BoardArea0 { get; set; }
-        public GameData BoardArea1 { get; set; }
-        public GameData BoardArea2 { get; set; }
-        public GameData BoardArea3 { get; set; }
-        public GameData BoardArea4 { get; set; }
-        public GameData BoardArea5 { get; set; }
-        public GameData BoardArea6 { get; set; }
-        public GameData BoardArea7 { get; set; }
-        public GameData BoardArea8 { get; set; }
+        public GameData BoardArea0 { get; private set; }
+        public GameData BoardArea1 { get; private set; }
+        public GameData BoardArea2 { get; private set; }
+        public GameData BoardArea3 { get; private set; }
+        public GameData BoardArea4 { get; private set; }
+        public GameData BoardArea5 { get; private set; }
+        public GameData BoardArea6 { get; private set; }
+        public GameData BoardArea7 { get; private set; }
+        public GameData BoardArea8 { get; private set; }
 
-        List<GameData> BoardAreaList = new List<GameData>();
+        List<GameData> BoardAreaList { get; set; }
 
 
         public GameBoard()
         {
-            BoardArea0 = new GameData();
-            BoardArea1 = new GameData();
-            BoardArea2 = new GameData();
-            BoardArea3 = new GameData();
-            BoardArea4 = new GameData();
-            BoardArea5 = new GameData();
-            BoardArea6 = new GameData();
-            BoardArea7 = new GameData();
-            BoardArea8 = new GameData();
-
-            BoardAreaList.Add(BoardArea0);
-            BoardAreaList.Add(BoardArea1);
-            BoardAreaList.Add(BoardArea2);
-            BoardAreaList.Add(BoardArea3);
-            BoardAreaList.Add(BoardArea4);
-            BoardAreaList.Add(BoardArea5);
-            BoardAreaList.Add(BoardArea6);
-            BoardAreaList.Add(BoardArea7);
-            BoardAreaList.Add(BoardArea8);
+            BoardAreaList = new List<GameData>();
+            BoardAreaList.Add(BoardArea0 = new GameData());
+            BoardAreaList.Add(BoardArea1 = new GameData());
+            BoardAreaList.Add(BoardArea2 = new GameData());
+            BoardAreaList.Add(BoardArea3 = new GameData());
+            BoardAreaList.Add(BoardArea4 = new GameData());
+            BoardAreaList.Add(BoardArea5 = new GameData());
+            BoardAreaList.Add(BoardArea6 = new GameData());
+            BoardAreaList.Add(BoardArea7 = new GameData());
+            BoardAreaList.Add(BoardArea8 = new GameData());
         }
 
         public bool CheckForWinnerX()
@@ -171,22 +162,6 @@ namespace TicTacToe.ViewModel
             return false;
         }
 
-        private void MakeItGreen(List<GameData> winner)
-        {
-            foreach (GameData item in winner)
-            {
-                item.IsWinner = true;
-            }
-        }
-
-        private bool WinnerX(GameData area)
-        {
-            if (area.Signe == "X")
-                return true;
-            else
-                return false;
-        }
-
         private bool WinnerO(GameData area)
         {
             if (area.Signe == "O")
@@ -259,13 +234,26 @@ namespace TicTacToe.ViewModel
                 return false;
         }
 
-
-        public void PlaceASigne(string name, string signe)
+        private void MakeItGreen(List<GameData> winner)
         {
-            double index = Char.GetNumericValue(name, 9);
-            int i = (int)index;
-            BoardAreaList[i].Signe = signe;
-            BoardAreaList[i].IDArea = i;
+            foreach (GameData item in winner)
+            {
+                item.IsWinner = true;
+            }
+        }
+
+        private bool WinnerX(GameData area)
+        {
+            if (area.Signe == "X")
+                return true;
+            else
+                return false;
+        }
+
+        public void PlaceASigne(int index, string signe)
+        {
+            BoardAreaList[index].Signe = signe;
+            BoardAreaList[index].IDArea = index;
         }
 
         public void ClearGameBoard()
