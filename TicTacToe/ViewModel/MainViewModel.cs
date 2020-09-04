@@ -5,11 +5,11 @@ using System.Windows.Input;
 
 namespace TicTacToe.ViewModel
 {
-    partial class MainViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase
     {
         public PlayerData PlayerX { get; set; }
         public PlayerData PlayerO { get; set; }
-        public Winner Board { get; set; }
+        public GameBoard Board { get; set; }
 
 
         public ICommand EnterNamePlayerXCommand { get; set; }
@@ -23,7 +23,7 @@ namespace TicTacToe.ViewModel
         {
             PlayerX = new PlayerData { /*Name = "",*/ Points = 12, InAction = true };
             PlayerO = new PlayerData { /*Name = "",*/ Points = 4, InAction = false };
-            Board = new Winner();
+            Board = new GameBoard();
            
             EnterNamePlayerXCommand = new RelayCommand(EnterNamePlayerXExecute, EnterNamePlayerXCanExecute);
             EnterNamePlayerOCommand = new RelayCommand(EnterNamePlayerOExecute, EnterNamePlayerOCanExecute);
